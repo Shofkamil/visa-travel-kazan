@@ -7,6 +7,7 @@ import httpx
 from dotenv import load_dotenv
 from fastapi import FastAPI, HTTPException, Request
 from fastapi.middleware.cors import CORSMiddleware
+from fastapi.responses import FileResponse
 from supabase import create_client
 
 load_dotenv()
@@ -189,6 +190,13 @@ async def submit(request: Request):
         raise HTTPException(502, "Failed to deliver to Telegram")
 
     return {"ok": True}
+
+
+# ── Landing page ─────────────────────────────────────────────
+
+@app.get("/")
+async def serve_index():
+    return FileResponse(os.path.join(os.path.dirname(__file__), "..", "index.html"))
 
 
 # ── Auto-register webhook on startup ─────────────────────────

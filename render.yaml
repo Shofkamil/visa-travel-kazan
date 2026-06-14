@@ -1,5 +1,4 @@
 services:
-  # ── FastAPI bot + form API ────────────────────────────────
   - type: web
     name: visatravel-api
     runtime: python
@@ -20,13 +19,3 @@ services:
         generateValue: true
       - key: LANDING_ORIGIN
         sync: false
-
-  # ── Static landing page (always-on, no plan needed) ──────
-  - type: static
-    name: visatravel-site
-    buildCommand: ""
-    staticPublishPath: .
-    headers:
-      - path: /*
-        name: Cache-Control
-        value: public, max-age=3600
