@@ -29,7 +29,10 @@ app.add_middleware(
     allow_headers=["Content-Type"],
 )
 
-db = create_client(SUPABASE_URL, SUPABASE_KEY) if SUPABASE_URL and SUPABASE_KEY else None
+try:
+    db = create_client(SUPABASE_URL, SUPABASE_KEY) if SUPABASE_URL and SUPABASE_KEY else None
+except Exception:
+    db = None
 
 # Fallback in-memory storage when Supabase is not configured
 _memory_users: set[int] = set()
