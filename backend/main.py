@@ -216,10 +216,14 @@ async def serve_index():
 
 @app.on_event("startup")
 async def set_webhook():
-    base = os.environ.get("RENDER_EXTERNAL_URL", "")
-    if base:
-        await tg(
-            "setWebhook",
-            url=f"{base}/webhook",
-            secret_token=WEBHOOK_SECRET,
-        )
+    try:
+        base = os.environ.get("RENDER_EXTERNAL_URL", "").rstrip("/")
+        if not base:
+            return
+        kwargs: dict = {"url": f"{base}/webhook"}
+        if WEBHOOK_SECRET:
+            kwargs["secret_token"] = WEBHOOK_SECRET
+        result = await tg("setWebhook", **kwargs)
+        print(f"Webhook set: {result}")
+    except Exception as e:
+        print(f"Warning: setWebhook failed ({e}), continuing anyway")
