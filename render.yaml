@@ -19,16 +19,13 @@ services:
       - key: WEBHOOK_SECRET
         generateValue: true
       - key: LANDING_ORIGIN
-        sync: false          # set to https://visatravel.ru once domain is live
+        sync: false
 
-  # ── Static landing page (always-on) ──────────────────────
-  - type: web
+  # ── Static landing page (always-on, no plan needed) ──────
+  - type: static
     name: visatravel-site
-    runtime: static
-    rootDir: .
     buildCommand: ""
     staticPublishPath: .
-    plan: free
     headers:
       - path: /*
         name: Cache-Control
