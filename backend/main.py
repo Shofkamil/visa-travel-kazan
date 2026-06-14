@@ -16,7 +16,7 @@ BOT_TOKEN      = os.environ["BOT_TOKEN"]
 ADMIN_CHAT_ID  = int(os.environ["ADMIN_CHAT_ID"])
 SUPABASE_URL   = os.environ.get("SUPABASE_URL", "")
 SUPABASE_KEY   = os.environ.get("SUPABASE_KEY", "")
-WEBHOOK_SECRET = os.environ["WEBHOOK_SECRET"]
+WEBHOOK_SECRET = os.environ.get("WEBHOOK_SECRET", "")
 LANDING_ORIGIN = os.environ.get("LANDING_ORIGIN", "*")
 
 TG_API = f"https://api.telegram.org/bot{BOT_TOKEN}"
@@ -67,9 +67,10 @@ def is_approved(chat_id: int) -> bool:
 
 @app.post("/webhook")
 async def webhook(request: Request):
-    secret = request.headers.get("X-Telegram-Bot-Api-Secret-Token", "")
-    if not hmac.compare_digest(secret, WEBHOOK_SECRET):
-        raise HTTPException(403)
+    if WEBHOOK_SECRET:
+        secret = request.headers.get("X-Telegram-Bot-Api-Secret-Token", "")
+        if not hmac.compare_digest(secret, WEBHOOK_SECRET):
+            raise HTTPException(403)
 
     body = await request.json()
 
