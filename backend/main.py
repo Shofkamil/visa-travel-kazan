@@ -14,8 +14,8 @@ load_dotenv()
 
 BOT_TOKEN      = os.environ["BOT_TOKEN"]
 ADMIN_CHAT_ID  = int(os.environ["ADMIN_CHAT_ID"])
-SUPABASE_URL   = os.environ["SUPABASE_URL"]
-SUPABASE_KEY   = os.environ["SUPABASE_KEY"]
+SUPABASE_URL   = os.environ.get("SUPABASE_URL", "")
+SUPABASE_KEY   = os.environ.get("SUPABASE_KEY", "")
 WEBHOOK_SECRET = os.environ["WEBHOOK_SECRET"]
 LANDING_ORIGIN = os.environ.get("LANDING_ORIGIN", "*")
 
@@ -29,7 +29,10 @@ app.add_middleware(
     allow_headers=["Content-Type"],
 )
 
-db = create_client(SUPABASE_URL, SUPABASE_KEY)
+db = create_client(SUPABASE_URL, SUPABASE_KEY) if SUPABASE_URL and SUPABASE_KEY else None
+
+# Fallback in-memory storage when Supabase is not configured
+_memory_users: set[int] = set()
 
 
 # ── Telegram helper ──────────────────────────────────────────
@@ -44,13 +47,17 @@ async def tg(method: str, **kwargs):
 # ── Approved users ───────────────────────────────────────────
 
 def get_approved_chat_ids() -> list[int]:
-    rows = db.table("approved_users").select("chat_id").execute()
-    return [row["chat_id"] for row in (rows.data or [])]
+    if db:
+        rows = db.table("approved_users").select("chat_id").execute()
+        return [row["chat_id"] for row in (rows.data or [])]
+    return list(_memory_users)
 
 
 def is_approved(chat_id: int) -> bool:
-    res = db.table("approved_users").select("id").eq("chat_id", chat_id).execute()
-    return bool(res.data)
+    if db:
+        res = db.table("approved_users").select("id").eq("chat_id", chat_id).execute()
+        return bool(res.data)
+    return chat_id in _memory_users
 
 
 # ── /webhook ─────────────────────────────────────────────────
@@ -122,11 +129,14 @@ async def webhook(request: Request):
             username   = parts[2] if len(parts) > 2 else ""
             first_name = parts[3] if len(parts) > 3 else ""
 
-            db.table("approved_users").upsert({
-                "chat_id":    target_id,
-                "username":   username,
-                "first_name": first_name,
-            }).execute()
+            if db:
+                db.table("approved_users").upsert({
+                    "chat_id":    target_id,
+                    "username":   username,
+                    "first_name": first_name,
+                }).execute()
+            else:
+                _memory_users.add(target_id)
 
             await tg("answerCallbackQuery", callback_query_id=cq_id, text="Пользователь одобрен ✅")
             await tg("editMessageReplyMarkup",
