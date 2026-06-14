@@ -225,9 +225,18 @@
       font-size: 1.05rem; color: var(--brown); margin-bottom: 7px;
     }
     .service-card p { font-size: 0.85rem; color: var(--muted); line-height: 1.65; }
-    .service-note {
-      margin-top: 12px; font-size: 0.7rem; color: var(--beige-dark);
-      font-style: italic; line-height: 1.5;
+    .services-disclaimer {
+      margin-top: 28px;
+      padding: 16px 20px;
+      background: var(--cream);
+      border: 1px solid var(--beige-dark);
+      border-radius: 10px;
+      display: flex; align-items: flex-start; gap: 10px;
+    }
+    .services-disclaimer-icon { font-size: 1rem; flex-shrink: 0; margin-top: 1px; }
+    .services-disclaimer p {
+      font-size: 0.78rem; color: var(--muted);
+      font-style: italic; line-height: 1.6; margin: 0;
     }
 
     /* ── HOW IT WORKS ─────────────────────────── */
@@ -736,25 +745,21 @@
         <div class="service-icon">🇪🇺</div>
         <h3>Шенгенская виза</h3>
         <p>Однократные и мультивизы в страны Шенгенской зоны. Помощь с пакетом документов, бронями и записью на приём.</p>
-        <p class="service-note">* Решение принимается консульством</p>
       </div>
       <div class="service-card fade-up">
         <div class="service-icon">🇺🇸</div>
         <h3>Виза США</h3>
         <p>Заполнение анкеты DS-160, подготовка документов, рекомендации по собеседованию. Категории B1/B2 и деловые визы.</p>
-        <p class="service-note">* Решение принимается посольством США</p>
       </div>
       <div class="service-card fade-up">
         <div class="service-icon">🇬🇧</div>
         <h3>Виза в Великобританию</h3>
         <p>Туристические, рабочие и студенческие визы в UK. Помощь с анкетой, сбором документов и записью на интервью.</p>
-        <p class="service-note">* Решение принимается Посольством Великобритании</p>
       </div>
       <div class="service-card fade-up">
         <div class="service-icon">🌏</div>
         <h3>Азиатские визы</h3>
         <p>Китай, Япония, Таиланд, Индия и другие страны. Полный список документов и помощь с заполнением форм.</p>
-        <p class="service-note">* Решение принимается консульством</p>
       </div>
       <div class="service-card fade-up">
         <div class="service-icon">✈️</div>
@@ -765,8 +770,11 @@
         <div class="service-icon">⚡</div>
         <h3>Срочная консультация</h3>
         <p>Нужна виза в короткие сроки? Помогу с приоритетной записью и ускоренной подготовкой документов.</p>
-        <p class="service-note">* Сроки рассмотрения определяет консульство</p>
       </div>
+    </div>
+    <div class="services-disclaimer">
+      <span class="services-disclaimer-icon">ℹ️</span>
+      <p>Visa Travel Kazan оказывает помощь в подготовке документов для визовой заявки. Решение о выдаче визы принимается исключительно консульством или посольством страны назначения — сроки и результат рассмотрения находятся вне нашего контроля.</p>
     </div>
   </div>
 </section>
