@@ -206,6 +206,13 @@ async def submit(request: Request):
     return {"ok": True}
 
 
+# ── Health check (for UptimeRobot) ───────────────────────────
+
+@app.get("/health")
+async def health():
+    return {"status": "ok"}
+
+
 # ── Landing page ─────────────────────────────────────────────
 
 @app.get("/")

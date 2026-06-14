@@ -3,7 +3,14 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Visa Travel Kazan — Визовый специалист Юлия</title>
+  <title>Visa Travel Kazan — Визовый специалист Юлия, Казань</title>
+  <meta name="description" content="Юлия — визовый специалист в Казани с 15-летним опытом. Помощь с оформлением шенгенских, американских и британских виз. ул. Абсалямова, 19. +7 (987) 296-05-12." />
+  <meta name="robots" content="index, follow" />
+  <meta property="og:type" content="website" />
+  <meta property="og:locale" content="ru_RU" />
+  <meta property="og:title" content="Visa Travel Kazan — Визовый специалист Юлия" />
+  <meta property="og:description" content="Помощь с оформлением виз в Казани. 15 лет опыта, 30+ стран, индивидуальный подход." />
+  <meta property="og:site_name" content="Visa Travel Kazan" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
   <style>
@@ -580,6 +587,42 @@
       .footer-copy { font-size: 0.65rem; }
       .wa-float { bottom: 16px; right: 16px; width: 46px; height: 46px; font-size: 1.2rem; }
     }
+
+    /* ── FAQ ──────────────────────────────────────────────── */
+    #faq { background: var(--cream); }
+    .faq-list { max-width: 720px; margin: 0 auto; display: flex; flex-direction: column; gap: 12px; }
+    details.faq-item {
+      background: var(--white); border: var(--line);
+      border-radius: 10px; overflow: hidden;
+    }
+    details.faq-item[open] { border-color: var(--beige-dark); }
+    summary.faq-q {
+      display: flex; justify-content: space-between; align-items: center;
+      padding: 18px 22px; cursor: pointer; list-style: none;
+      font-weight: 600; font-size: 0.97rem; color: var(--brown);
+      gap: 12px;
+    }
+    summary.faq-q::-webkit-details-marker { display: none; }
+    summary.faq-q::after {
+      content: '+'; font-size: 1.4rem; color: var(--gold);
+      flex-shrink: 0; transition: transform 0.2s;
+    }
+    details.faq-item[open] summary.faq-q::after { transform: rotate(45deg); }
+    .faq-a { padding: 0 22px 18px; color: var(--brown-mid); font-size: 0.92rem; line-height: 1.65; }
+
+    /* ── CALL BUTTON ──────────────────────────────────────── */
+    .contact-cta-row { display: flex; gap: 12px; margin-top: 10px; }
+    .contact-cta-row .wa-btn,
+    .contact-cta-row .call-btn { flex: 1; margin-top: 0; }
+    .call-btn {
+      display: flex; align-items: center; justify-content: center; gap: 8px;
+      padding: 14px 24px;
+      background: var(--white); border: 2px solid var(--gold);
+      border-radius: 8px; color: var(--gold);
+      font-weight: 600; font-size: 0.97rem; text-decoration: none;
+      transition: background 0.2s, color 0.2s;
+    }
+    .call-btn:hover { background: var(--gold); color: var(--white); }
   </style>
 </head>
 <body>
@@ -876,6 +919,52 @@
   </div>
 </section>
 
+<!-- FAQ -->
+<section id="faq">
+  <div class="container">
+    <div class="section-eyebrow" style="text-align:center"><span>Вопросы и ответы</span></div>
+    <h2 class="section-title" style="text-align:center">Часто задаваемые вопросы</h2>
+    <div class="faq-list">
+      <details class="faq-item fade-up">
+        <summary class="faq-q">Гарантируете ли вы получение визы?</summary>
+        <div class="faq-a">
+          <p>Решение о выдаче визы принимает исключительно консульство или посольство страны назначения — ни одна компания в мире не может гарантировать одобрение. Юлия гарантирует другое: грамотно подготовленный пакет документов, минимум ошибок в анкете и максимальные шансы на положительный ответ, основанные на 15 годах практики.</p>
+        </div>
+      </details>
+      <details class="faq-item fade-up">
+        <summary class="faq-q">Сколько стоит консультация?</summary>
+        <div class="faq-a">
+          <p>Первичная консультация по телефону или в мессенджере — бесплатно. Юлия расскажет, какие документы нужны именно вам и во сколько обойдётся полное сопровождение. Оставьте заявку — мы перезвоним и ответим на все вопросы.</p>
+        </div>
+      </details>
+      <details class="faq-item fade-up">
+        <summary class="faq-q">Как долго оформляется виза?</summary>
+        <div class="faq-a">
+          <p>Сроки зависят от страны и типа визы. Шенгенские — обычно 5–15 рабочих дней. США — 30–90 дней (включая ожидание интервью). Великобритания — 15–30 рабочих дней. Мы поможем рассчитать сроки под вашу дату поездки и при необходимости организуем срочное рассмотрение.</p>
+        </div>
+      </details>
+      <details class="faq-item fade-up">
+        <summary class="faq-q">Что будет, если в визе откажут?</summary>
+        <div class="faq-a">
+          <p>Мы разберём причину отказа и разработаем стратегию для повторной подачи: устраним слабые места в документах, подберём оптимальный момент для новой попытки. Многие наши клиенты успешно получали визу со второго раза после совместного анализа ситуации.</p>
+        </div>
+      </details>
+      <details class="faq-item fade-up">
+        <summary class="faq-q">Можно ли обратиться за срочной помощью?</summary>
+        <div class="faq-a">
+          <p>Да. Если поездка через несколько недель или уже куплены билеты — позвоните или напишите в WhatsApp прямо сейчас. Юлия оценит ситуацию и предложит наиболее быстрый вариант: запись в приоритетную очередь, помощь с Appointment в нужное консульство и ускоренный сбор документов.</p>
+        </div>
+      </details>
+      <details class="faq-item fade-up">
+        <summary class="faq-q">Нужно ли приходить лично?</summary>
+        <div class="faq-a">
+          <p>На консультацию и для передачи оригиналов документов — да, желательно приехать в офис на ул. Абсалямова, 19. Многое можно сделать дистанционно: проверка анкеты, заполнение форм, онлайн-оплата сборов. Личная явка в консульство для биометрии зависит от конкретной страны — уточним при разговоре.</p>
+        </div>
+      </details>
+    </div>
+  </div>
+</section>
+
 <!-- CONTACT -->
 <section id="contact">
   <div class="container">
@@ -909,9 +998,10 @@
             </div>
           </div>
         </div>
-        <a href="https://wa.me/79872960512" target="_blank" class="wa-btn">
-          💬 Написать в WhatsApp
-        </a>
+        <div class="contact-cta-row">
+          <a href="tel:+79872960512" class="call-btn">📞 Позвонить</a>
+          <a href="https://wa.me/79872960512" target="_blank" class="wa-btn">💬 WhatsApp</a>
+        </div>
       </div>
       <div class="contact-form fade-up">
         <div class="form-head">Оставить заявку</div>
@@ -1002,10 +1092,98 @@
       </ul>
     </div>
   </div>
-  <p class="footer-copy">© 2025 Visa Travel Kazan · Юлия · +7 (987) 296-05-12</p>
+  <p class="footer-copy">© 2025 Visa Travel Kazan · Юлия · <a href="tel:+79872960512">+7 (987) 296-05-12</a></p>
 </footer>
 
 <a href="https://wa.me/79872960512" target="_blank" class="wa-float" title="WhatsApp">💬</a>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "name": "Visa Travel Kazan",
+  "description": "Помощь с оформлением виз и туров в Казани. Шенгенские, американские, британские и азиатские визы.",
+  "telephone": "+79872960512",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "ул. Абсалямова, 19",
+    "addressLocality": "Казань",
+    "addressRegion": "Республика Татарстан",
+    "addressCountry": "RU"
+  },
+  "openingHoursSpecification": [
+    {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"],
+      "opens": "09:00",
+      "closes": "19:00"
+    },
+    {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": ["Saturday"],
+      "opens": "10:00",
+      "closes": "16:00"
+    }
+  ]
+}
+</script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Гарантируете ли вы получение визы?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Решение о выдаче визы принимает исключительно консульство или посольство страны назначения. Юлия гарантирует грамотно подготовленный пакет документов и максимальные шансы на положительный ответ, основанные на 15 годах практики."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Сколько стоит консультация?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Первичная консультация по телефону или в мессенджере — бесплатно. Оставьте заявку, и мы расскажем, какие документы нужны именно вам и во сколько обойдётся полное сопровождение."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Как долго оформляется виза?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Сроки зависят от страны. Шенгенские — 5–15 рабочих дней. США — 30–90 дней. Великобритания — 15–30 рабочих дней. Мы поможем рассчитать сроки под вашу дату поездки."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Что будет, если в визе откажут?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Мы разберём причину отказа и разработаем стратегию для повторной подачи: устраним слабые места в документах и подберём оптимальный момент для новой попытки."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Можно ли обратиться за срочной помощью?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Да. Если поездка через несколько недель — позвоните или напишите в WhatsApp прямо сейчас. Юлия оценит ситуацию и предложит наиболее быстрый вариант оформления."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Нужно ли приходить лично?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "На консультацию и для передачи оригиналов — желательно в офис на ул. Абсалямова, 19. Многое можно сделать дистанционно: проверка анкеты, заполнение форм, онлайн-оплата сборов."
+      }
+    }
+  ]
+}
+</script>
 
 <script>
   // ─── BACKEND URL (update after Render deploy) ──────────────
