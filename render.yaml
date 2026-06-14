@@ -1,0 +1,35 @@
+services:
+  # ── FastAPI bot + form API ────────────────────────────────
+  - type: web
+    name: visatravel-api
+    runtime: python
+    rootDir: backend
+    buildCommand: pip install -r requirements.txt
+    startCommand: uvicorn main:app --host 0.0.0.0 --port $PORT
+    plan: free
+    envVars:
+      - key: BOT_TOKEN
+        sync: false
+      - key: ADMIN_CHAT_ID
+        value: "2886005"
+      - key: SUPABASE_URL
+        sync: false
+      - key: SUPABASE_KEY
+        sync: false
+      - key: WEBHOOK_SECRET
+        generateValue: true
+      - key: LANDING_ORIGIN
+        sync: false          # set to https://visatravel.ru once domain is live
+
+  # ── Static landing page (always-on) ──────────────────────
+  - type: web
+    name: visatravel-site
+    runtime: static
+    rootDir: .
+    buildCommand: ""
+    staticPublishPath: .
+    plan: free
+    headers:
+      - path: /*
+        name: Cache-Control
+        value: public, max-age=3600
