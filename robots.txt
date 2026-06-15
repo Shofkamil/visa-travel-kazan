@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://shofkamil.github.io/visa-travel-kazan/sitemap.xml
+Sitemap: https://visalet.ru/sitemap.xml
