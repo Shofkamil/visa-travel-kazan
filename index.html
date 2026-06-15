@@ -108,6 +108,39 @@
   @media(max-width:559px){
     [data-resp="process-grid"]{grid-template-columns:1fr!important}
   }
+
+  /* ── Small phones (360–400px: Samsung Galaxy A, Xiaomi Redmi) ── */
+  @media(max-width:420px){
+    /* Section horizontal breathing room */
+    #top,#services,#process,#about,#reviews,#contacts{padding-left:16px!important;padding-right:16px!important}
+    section:not([id]){padding-left:16px!important;padding-right:16px!important}
+    /* Nav inner container */
+    nav>div{padding-left:16px!important;padding-right:16px!important}
+    /* Mobile menu */
+    #nav-mobile-menu{padding-left:16px!important;padding-right:16px!important}
+    /* Reduce hero top padding */
+    #top{padding-top:100px!important}
+    /* Hero stats card */
+    #top [data-reveal-blur-d2]>div{padding:26px 20px!important}
+    /* Service & review cards */
+    .vtk-service-card{padding:22px 18px!important}
+    /* Logo font size */
+    #nav-logo-link span:last-child{font-size:17px!important}
+    /* Buttons full-width on tiny screens */
+    #top [href="#contacts"].vtk-btn-primary,#top [href="#services"]{display:block!important;text-align:center!important;width:100%!important;box-sizing:border-box!important}
+    /* Contact section heading font */
+    #contacts h2{font-size:clamp(28px,7.5vw,44px)!important}
+    /* FAQ section padding */
+    #faq-list{padding:0!important}
+    /* Map bar */
+    #map-section .map-bar{padding-left:16px!important;padding-right:16px!important;flex-direction:column!important;align-items:flex-start!important;gap:8px!important}
+  }
+
+  /* ── Reduce vertical breathing room on all mobile ── */
+  @media(max-width:680px){
+    #top{padding-top:108px!important;padding-bottom:0!important}
+    #services,#process,#about,#reviews,#contacts,section:not([id]){padding-top:64px!important;padding-bottom:64px!important}
+  }
 </style>
 </head>
 <body>
