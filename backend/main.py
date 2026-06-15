@@ -22,12 +22,18 @@ LANDING_ORIGIN = os.environ.get("LANDING_ORIGIN", "https://visalet.ru")
 
 TG_API = f"https://api.telegram.org/bot{BOT_TOKEN}"
 
-ALLOWED_ORIGINS = {LANDING_ORIGIN, "https://www.visalet.ru"}
+# Lock CORS to the real site. We deliberately ignore a "*" value in
+# LANDING_ORIGIN so a stray env var can't silently re-open the API to
+# every origin — spam bots bypass CORS anyway, but a wildcard lets any
+# website fire browser requests at /submit.
+ALLOWED_ORIGINS = {"https://visalet.ru", "https://www.visalet.ru"}
+if LANDING_ORIGIN and LANDING_ORIGIN != "*":
+    ALLOWED_ORIGINS.add(LANDING_ORIGIN)
 
 app = FastAPI()
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=list(ALLOWED_ORIGINS),
+    allow_origins=sorted(ALLOWED_ORIGINS),
     allow_methods=["POST", "GET"],
     allow_headers=["Content-Type"],
 )
