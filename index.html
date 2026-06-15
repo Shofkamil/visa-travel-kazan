@@ -1,925 +1,333 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Visa Travel Kazan — Визовое агентство в Казани</title>
-  <meta name="description" content="Visa Travel Kazan — визовое агентство в Казани с 15-летним опытом. Помощь с оформлением шенгенских, американских и британских виз. ул. Абсалямова, 19. +7 (987) 296-05-12." />
-  <meta name="robots" content="index, follow" />
-  <meta property="og:type" content="website" />
-  <meta property="og:locale" content="ru_RU" />
-  <meta property="og:title" content="Visa Travel Kazan — Визовое агентство в Казани" />
-  <meta property="og:description" content="Помощь с оформлением виз в Казани. 15 лет опыта, 30+ стран, индивидуальный подход." />
-  <meta property="og:site_name" content="Visa Travel Kazan" />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
-  <style>
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Visa Travel Kazan — Визовое агентство в Казани</title>
+<meta name="description" content="Visa Travel Kazan — визовое агентство в Казани. 15 лет опыта. Шенгенские, американские, британские визы. ул. Абсалямова, 19. +7 (987) 296-05-12." />
+<meta name="robots" content="index, follow" />
+<meta property="og:type" content="website" />
+<meta property="og:locale" content="ru_RU" />
+<meta property="og:title" content="Visa Travel Kazan — Визовое агентство в Казани" />
+<meta property="og:description" content="Помощь с оформлением виз в Казани. 15 лет опыта, 30+ стран." />
+<meta property="og:site_name" content="Visa Travel Kazan" />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{margin:0;font-family:'Inter',sans-serif;background:#f4efe4;color:#0f1b2d;-webkit-font-smoothing:antialiased}
+  body::before{content:'';position:fixed;inset:0;z-index:9998;pointer-events:none;opacity:0.045;mix-blend-mode:multiply;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.82' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");}
+  section{scroll-margin-top:84px}
+  ::selection{background:#c9a84c;color:#0f1b2d}
 
-    :root {
-      --cream:      #faf8f2;
-      --beige:      #f2e9d0;
-      --beige-mid:  #e6d8b4;
-      --beige-dark: #d4c28e;
-      --gold:       #a86f0a;
-      --gold-mid:   #c8890e;
-      --gold-pale:  #fdf3dc;
-      --brown:      #231a0d;
-      --brown-mid:  #5a4228;
-      --muted:      #8c7254;
-      --white:      #ffffff;
-      --line:       1px solid var(--beige-mid);
-    }
+  @keyframes vtk-marquee{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+  @keyframes vtk-spin{to{transform:rotate(360deg)}}
+  @keyframes vtk-float{0%,100%{transform:translate(0,0)}50%{transform:translate(26px,-22px)}}
+  @keyframes vtk-float2{0%,100%{transform:translate(0,0)}50%{transform:translate(-22px,20px)}}
+  @keyframes vtk-glow{0%,100%{opacity:.5}50%{opacity:1}}
+  @keyframes vtk-pulse{0%{transform:scale(1);opacity:.5}70%{transform:scale(2.1);opacity:0}100%{transform:scale(2.1);opacity:0}}
+  @keyframes vtk-shine{0%{background-position:150% 0}100%{background-position:-150% 0}}
 
-    html { scroll-behavior: smooth; }
-    body {
-      font-family: 'Inter', sans-serif;
-      color: var(--brown);
-      background: var(--cream);
-      overflow-x: hidden;
-    }
+  input:focus,select:focus,textarea:focus{outline:none;border-color:#c9a84c!important}
+  input::placeholder,textarea::placeholder{color:#9aa3b0}
 
-    /* ── NAV ─────────────────────────────────── */
-    nav {
-      position: sticky; top: 0; z-index: 200;
-      background: var(--cream);
-      border-bottom: var(--line);
-      padding: 0 56px;
-      height: 62px;
-      display: flex; align-items: center; justify-content: space-between;
-    }
-    .nav-logo {
-      font-family: 'Playfair Display', serif;
-      font-size: 1.2rem; font-weight: 700;
-      color: var(--brown); text-decoration: none;
-      letter-spacing: 0.01em;
-    }
-    .nav-logo span { color: var(--gold-mid); }
-    .nav-links { display: flex; gap: 32px; list-style: none; align-items: center; }
-    .nav-links a {
-      color: var(--brown-mid); text-decoration: none;
-      font-size: 0.85rem; font-weight: 500; letter-spacing: 0.02em;
-      transition: color 0.2s;
-    }
-    .nav-links a:hover { color: var(--gold); }
-    .nav-cta {
-      background: var(--gold) !important; color: var(--white) !important;
-      padding: 8px 20px; border-radius: 5px;
-      font-weight: 600 !important; font-size: 0.85rem !important;
-      transition: background 0.2s !important;
-    }
-    .nav-cta:hover { background: var(--gold-mid) !important; }
+  /* ── Reveal animation ── */
+  [data-reveal]{opacity:0;transform:translateY(24px);transition:opacity .7s ease,transform .7s ease}
+  [data-reveal].vtk-visible{opacity:1;transform:translateY(0);filter:none!important}
+  [data-reveal-blur]{opacity:0;transform:translateY(40px);filter:blur(7px);transition:opacity 1s ease,transform 1.1s cubic-bezier(.22,1,.36,1),filter 1s ease}
+  [data-reveal-blur].vtk-visible{opacity:1;transform:translateY(0);filter:none}
+  [data-reveal-blur-d2]{opacity:0;transform:translateY(40px);filter:blur(7px);transition:opacity 1s ease .2s,transform 1.1s cubic-bezier(.22,1,.36,1) .2s,filter 1s ease .2s}
+  [data-reveal-blur-d2].vtk-visible{opacity:1;transform:translateY(0);filter:none}
 
-    /* ── HERO ─────────────────────────────────── */
-    #hero {
-      background: linear-gradient(160deg, var(--cream) 0%, #f5ecd0 60%, #eedfa8 100%);
-      border-bottom: var(--line);
-      padding: 72px 56px 80px;
-    }
-    .hero-inner {
-      max-width: 1100px; margin: 0 auto;
-      display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: center;
-    }
-    .hero-badge {
-      display: inline-flex; align-items: center; gap: 7px;
-      background: var(--gold-pale); border: 1px solid var(--beige-mid);
-      color: var(--gold); padding: 4px 12px; border-radius: 3px;
-      font-size: 0.7rem; font-weight: 700; letter-spacing: 0.12em;
-      text-transform: uppercase; margin-bottom: 22px;
-    }
-    h1 {
-      font-family: 'Playfair Display', serif;
-      font-size: clamp(2rem, 4.5vw, 3.4rem);
-      color: var(--brown); line-height: 1.18;
-      margin-bottom: 18px;
-    }
-    h1 em { font-style: italic; color: var(--gold); }
-    .hero-desc {
-      font-size: 1.02rem; color: var(--brown-mid);
-      line-height: 1.74; max-width: 440px;
-      margin-bottom: 10px; font-weight: 300;
-    }
-    .hero-disclaimer {
-      font-size: 0.72rem; color: var(--muted);
-      line-height: 1.55; max-width: 420px; margin-bottom: 32px;
-    }
-    .hero-actions { display: flex; gap: 12px; flex-wrap: wrap; }
-    .btn-primary {
-      background: var(--gold); color: var(--white);
-      padding: 13px 30px; border-radius: 5px;
-      font-weight: 600; font-size: 0.9rem; text-decoration: none;
-      transition: background 0.2s, transform 0.15s; display: inline-block;
-    }
-    .btn-primary:hover { background: var(--gold-mid); transform: translateY(-1px); }
-    .btn-ghost {
-      border: 1.5px solid var(--beige-dark); color: var(--brown-mid);
-      padding: 12px 26px; border-radius: 5px;
-      font-weight: 500; font-size: 0.9rem; text-decoration: none;
-      transition: border-color 0.2s, color 0.2s; display: inline-block;
-    }
-    .btn-ghost:hover { border-color: var(--gold); color: var(--gold); }
+  /* ── Hover helpers ── */
+  .vtk-nav-link{transition:color .25s}
+  .vtk-nav-link:hover{color:#c9a84c!important}
+  .vtk-btn-cta{transition:transform .25s,box-shadow .25s}
+  .vtk-btn-cta:hover{transform:translateY(-2px)!important;box-shadow:0 8px 22px rgba(201,168,76,.4)!important}
+  .vtk-btn-primary{transition:transform .25s,box-shadow .25s}
+  .vtk-btn-primary:hover{transform:translateY(-2px)!important;box-shadow:0 12px 30px rgba(201,168,76,.42)!important}
+  .vtk-btn-ghost{transition:background .25s,border-color .25s}
+  .vtk-btn-ghost:hover{background:rgba(246,241,231,.06)!important;border-color:rgba(201,168,76,.6)!important}
+  .vtk-service-card{transition:opacity .7s cubic-bezier(.22,1,.36,1),transform .45s cubic-bezier(.22,1,.36,1),box-shadow .45s ease,border-color .45s ease}
+  .vtk-service-card:hover{box-shadow:0 28px 60px rgba(15,27,45,.16),0 0 0 1px rgba(201,168,76,.4)!important;border-color:rgba(201,168,76,.7)!important;transform:translateY(-8px)!important}
+  .vtk-wa-float{transition:transform .25s}
+  .vtk-wa-float:hover{transform:scale(1.08)!important}
+  .vtk-contact-phone{transition:color .2s}
+  .vtk-contact-phone:hover{color:#c9a84c!important}
+  .vtk-btn-call{transition:background .25s}
+  .vtk-btn-call:hover{background:rgba(201,168,76,.24)!important}
+  .vtk-btn-wa-sm{transition:transform .25s}
+  .vtk-btn-wa-sm:hover{transform:translateY(-2px)!important}
+  .vtk-btn-submit{transition:transform .25s,box-shadow .25s}
+  .vtk-btn-submit:hover{transform:translateY(-2px)!important;box-shadow:0 10px 26px rgba(201,168,76,.42)!important}
+  .vtk-marquee-wrap:hover .vtk-marquee{animation-play-state:paused}
+  .vtk-footer-link{transition:color .2s}
+  .vtk-footer-link:hover{color:#f6f1e7!important}
 
-    /* Hero right panel */
-    .hero-panel {
-      background: var(--white); border: var(--line);
-      border-radius: 14px; padding: 32px 28px;
-      box-shadow: 0 4px 24px rgba(168,111,10,0.08);
-    }
-    .hero-panel-title {
-      font-size: 0.7rem; font-weight: 700; letter-spacing: 0.1em;
-      text-transform: uppercase; color: var(--muted); margin-bottom: 20px;
-    }
-    .stat-row {
-      display: flex; flex-direction: column; gap: 16px; margin-bottom: 24px;
-    }
-    .stat-item {
-      display: flex; align-items: center; gap: 14px;
-      padding: 14px 16px;
-      background: var(--cream); border-radius: 8px; border: var(--line);
-    }
-    .stat-icon {
-      font-size: 1.4rem; width: 40px; text-align: center; flex-shrink: 0;
-    }
-    .stat-val {
-      font-family: 'Playfair Display', serif;
-      font-size: 1.25rem; font-weight: 700; color: var(--gold); line-height: 1;
-    }
-    .stat-lbl { font-size: 0.78rem; color: var(--muted); margin-top: 2px; }
-    .hero-panel-cta {
-      display: block; text-align: center;
-      background: #25d366; color: var(--white); text-decoration: none;
-      padding: 11px; border-radius: 7px; font-weight: 600; font-size: 0.88rem;
-      transition: background 0.2s;
-    }
-    .hero-panel-cta:hover { background: #1da851; }
+  /* ── Map ── */
+  #map-section .map-bar{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px;background:#0c1626;padding:16px 28px;border-top:1px solid rgba(201,168,76,.14);color:#cdd4de;font-size:14px}
+  #map-section .map-bar a{color:#c9a84c;text-decoration:none;font-weight:500;white-space:nowrap}
+  #map-section .map-bar a:hover{text-decoration:underline}
+  #map-section iframe{display:block;width:100%;height:340px;border:0}
 
-    /* ── COUNTRIES ────────────────────────────── */
-    #countries {
-      background: var(--beige); border-bottom: var(--line);
-      padding: 36px 0; overflow: hidden;
-    }
-    .countries-label {
-      text-align: center; color: var(--muted);
-      font-size: 0.68rem; letter-spacing: 0.14em;
-      text-transform: uppercase; margin-bottom: 20px;
-    }
-    .countries-track {
-      display: flex; gap: 52px;
-      animation: slide 38s linear infinite; width: max-content;
-    }
-    @keyframes slide { from { transform: translateX(0); } to { transform: translateX(-50%); } }
-    .country-item {
-      display: flex; align-items: center; gap: 9px;
-      color: var(--brown-mid); font-size: 0.87rem; white-space: nowrap;
-    }
-    .flag { font-size: 1.2rem; }
-
-    /* ── SECTION BASE ─────────────────────────── */
-    section { padding: 80px 56px; }
-    .container { max-width: 1100px; margin: 0 auto; }
-    .section-eyebrow {
-      display: flex; align-items: center; gap: 10px;
-      margin-bottom: 10px;
-    }
-    .section-eyebrow::before {
-      content: ''; display: block;
-      width: 28px; height: 2px; background: var(--gold);
-      flex-shrink: 0;
-    }
-    .section-eyebrow span {
-      color: var(--gold); font-size: 0.7rem; font-weight: 700;
-      letter-spacing: 0.13em; text-transform: uppercase;
-    }
-    h2 {
-      font-family: 'Playfair Display', serif;
-      font-size: clamp(1.65rem, 3.2vw, 2.5rem);
-      color: var(--brown); line-height: 1.22; margin-bottom: 12px;
-    }
-    h2 em { font-style: italic; color: var(--gold); }
-    .section-sub {
-      font-size: 0.97rem; color: var(--muted);
-      max-width: 480px; line-height: 1.72; margin-bottom: 48px;
-      font-weight: 300;
-    }
-
-    /* ── SERVICES ─────────────────────────────── */
-    #services { background: var(--white); border-top: var(--line); }
-    .services-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 18px;
-    }
-    .service-card {
-      background: var(--cream); border-radius: 10px; padding: 28px 24px;
-      border: var(--line); cursor: default;
-      transition: border-color 0.2s, box-shadow 0.2s, transform 0.2s;
-    }
-    .service-card:hover {
-      border-color: var(--gold-mid);
-      box-shadow: 0 8px 28px rgba(168,111,10,0.1);
-      transform: translateY(-3px);
-    }
-    .service-icon { font-size: 1.7rem; margin-bottom: 12px; }
-    .service-card h3 {
-      font-family: 'Playfair Display', serif;
-      font-size: 1.05rem; color: var(--brown); margin-bottom: 7px;
-    }
-    .service-card p { font-size: 0.85rem; color: var(--muted); line-height: 1.65; }
-    .services-disclaimer {
-      margin-top: 28px;
-      padding: 16px 20px;
-      background: var(--cream);
-      border: 1px solid var(--beige-dark);
-      border-radius: 10px;
-      display: flex; align-items: flex-start; gap: 10px;
-    }
-    .services-disclaimer-icon { font-size: 1rem; flex-shrink: 0; margin-top: 1px; }
-    .services-disclaimer p {
-      font-size: 0.78rem; color: var(--muted);
-      font-style: italic; line-height: 1.6; margin: 0;
-    }
-
-    /* ── HOW IT WORKS ─────────────────────────── */
-    #how {
-      background: var(--beige);
-      border-top: var(--line); border-bottom: var(--line);
-    }
-    .steps-grid {
-      display: grid; grid-template-columns: repeat(4, 1fr); gap: 0;
-      border: var(--line); border-radius: 12px; overflow: hidden;
-    }
-    .step {
-      padding: 32px 24px; background: var(--white);
-      border-right: var(--line); position: relative;
-    }
-    .step:last-child { border-right: none; }
-    .step-num {
-      font-family: 'Playfair Display', serif;
-      font-size: 2.8rem; font-weight: 700;
-      color: var(--beige-mid); line-height: 1; margin-bottom: 14px;
-    }
-    .step-line {
-      width: 24px; height: 2px; background: var(--gold);
-      margin-bottom: 14px;
-    }
-    .step h4 {
-      font-family: 'Playfair Display', serif;
-      font-size: 1rem; color: var(--brown); margin-bottom: 8px;
-    }
-    .step p { font-size: 0.83rem; color: var(--muted); line-height: 1.62; }
-    .step-arrow {
-      position: absolute; right: -12px; top: 50%; transform: translateY(-50%);
-      z-index: 2; background: var(--gold-pale);
-      border: var(--line); border-radius: 50%;
-      width: 24px; height: 24px;
-      display: flex; align-items: center; justify-content: center;
-      font-size: 0.7rem; color: var(--gold);
-    }
-    .step:last-child .step-arrow { display: none; }
-
-    /* ── ABOUT ────────────────────────────────── */
-    #about { background: var(--cream); border-top: var(--line); }
-    .about-grid {
-      display: grid; grid-template-columns: 1fr 1.3fr; gap: 64px; align-items: start;
-    }
-    .julia-card {
-      background: var(--beige); border: var(--line);
-      border-radius: 12px; overflow: hidden;
-    }
-    .julia-card-top {
-      background: linear-gradient(145deg, var(--brown) 0%, #3a2a14 100%);
-      padding: 36px 32px;
-    }
-    .julia-avatar {
-      width: 68px; height: 68px;
-      background: var(--gold-pale); border: 2px solid var(--gold-mid);
-      border-radius: 50%;
-      display: flex; align-items: center; justify-content: center;
-      font-size: 1.8rem; margin-bottom: 16px;
-    }
-    .julia-name {
-      font-family: 'Playfair Display', serif;
-      font-size: 1.4rem; color: var(--white); margin-bottom: 2px;
-    }
-    .julia-role { font-size: 0.75rem; color: var(--gold-mid); font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; }
-    .julia-card-body { padding: 24px 32px; }
-    .julia-quote {
-      font-size: 0.9rem; color: var(--brown-mid); line-height: 1.72;
-      font-style: italic; border-left: 3px solid var(--gold);
-      padding-left: 14px; margin-bottom: 20px;
-    }
-    .julia-stats {
-      display: flex; gap: 0; border-top: var(--line); padding-top: 18px;
-    }
-    .julia-stat {
-      flex: 1; text-align: center; padding: 0 10px;
-      border-right: var(--line);
-    }
-    .julia-stat:last-child { border-right: none; }
-    .julia-stat-num {
-      font-family: 'Playfair Display', serif;
-      font-size: 1.3rem; color: var(--gold); font-weight: 700;
-    }
-    .julia-stat-lbl { font-size: 0.7rem; color: var(--muted); margin-top: 1px; }
-
-    .about-text p {
-      font-size: 0.95rem; color: var(--brown-mid);
-      line-height: 1.8; margin-bottom: 16px;
-    }
-    .about-values {
-      display: flex; flex-direction: column; gap: 0;
-      margin-top: 28px; border: var(--line); border-radius: 10px; overflow: hidden;
-    }
-    .value-item {
-      display: flex; align-items: flex-start; gap: 14px;
-      padding: 16px 18px; border-bottom: var(--line);
-      background: var(--white);
-    }
-    .value-item:last-child { border-bottom: none; }
-    .value-icon {
-      width: 34px; height: 34px; flex-shrink: 0;
-      background: var(--gold-pale); border-radius: 7px;
-      display: flex; align-items: center; justify-content: center;
-      font-size: 0.95rem;
-    }
-    .value-text { font-size: 0.88rem; color: var(--brown-mid); line-height: 1.55; }
-    .value-text strong { color: var(--brown); }
-
-    /* ── TESTIMONIALS ─────────────────────────── */
-    #testimonials { background: var(--beige); border-top: var(--line); }
-    .testi-grid {
-      display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px;
-    }
-    .testi-card {
-      background: var(--white); border: var(--line);
-      border-radius: 10px; padding: 28px 24px; position: relative;
-    }
-    .testi-quote-mark {
-      font-family: 'Playfair Display', serif;
-      font-size: 4rem; color: var(--beige-mid); line-height: 0.7;
-      margin-bottom: 12px; display: block;
-    }
-    .stars { color: var(--gold-mid); font-size: 0.85rem; letter-spacing: 3px; margin-bottom: 12px; }
-    .testi-text {
-      font-size: 0.87rem; color: var(--brown-mid);
-      line-height: 1.72; margin-bottom: 18px;
-    }
-    .testi-divider {
-      height: 1px; background: var(--beige-mid); margin-bottom: 14px;
-    }
-    .testi-author { display: flex; align-items: center; gap: 10px; }
-    .testi-avatar {
-      width: 36px; height: 36px;
-      background: var(--beige); border: var(--line);
-      border-radius: 50%; display: flex; align-items: center; justify-content: center;
-      font-size: 0.9rem; flex-shrink: 0;
-    }
-    .testi-name { font-weight: 600; color: var(--brown); font-size: 0.83rem; }
-    .testi-dest { font-size: 0.72rem; color: var(--gold); }
-
-    /* ── CONTACT ──────────────────────────────── */
-    #contact { background: var(--white); border-top: var(--line); }
-    .contact-grid {
-      display: grid; grid-template-columns: 1fr 1.4fr; gap: 56px; align-items: start;
-    }
-    .contact-info-head h3 {
-      font-family: 'Playfair Display', serif;
-      font-size: 1.5rem; color: var(--brown); margin-bottom: 8px;
-    }
-    .contact-info-head p {
-      font-size: 0.9rem; color: var(--muted);
-      line-height: 1.65; margin-bottom: 28px;
-    }
-    .contact-list { display: flex; flex-direction: column; gap: 12px; }
-    .contact-row {
-      display: flex; align-items: center; gap: 12px;
-      padding: 12px 14px; background: var(--cream);
-      border: var(--line); border-radius: 8px;
-    }
-    .contact-row-icon {
-      width: 36px; height: 36px; flex-shrink: 0;
-      background: var(--gold-pale); border-radius: 6px;
-      display: flex; align-items: center; justify-content: center;
-      font-size: 1rem;
-    }
-    .contact-row-label {
-      font-size: 0.68rem; color: var(--muted);
-      text-transform: uppercase; letter-spacing: 0.08em;
-    }
-    .contact-row-val {
-      font-size: 0.9rem; color: var(--brown); font-weight: 600;
-      text-decoration: none; transition: color 0.2s;
-    }
-    .contact-row-val:hover { color: var(--gold); }
-    .wa-btn {
-      display: flex; align-items: center; justify-content: center; gap: 9px;
-      background: #25d366; color: var(--white);
-      padding: 13px; border-radius: 8px; text-decoration: none;
-      font-weight: 600; font-size: 0.9rem; margin-top: 16px;
-      transition: background 0.2s;
-    }
-    .wa-btn:hover { background: #1da851; }
-
-    /* Form */
-    .contact-form {
-      background: var(--cream); border: var(--line);
-      border-radius: 12px; padding: 36px 32px;
-    }
-    .form-head {
-      font-family: 'Playfair Display', serif;
-      font-size: 1.2rem; color: var(--brown); margin-bottom: 22px;
-    }
-    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
-    .form-group { margin-bottom: 14px; }
-    .form-group label {
-      display: block; font-size: 0.73rem; font-weight: 600;
-      color: var(--brown-mid); margin-bottom: 5px; letter-spacing: 0.03em;
-    }
-    .form-group input,
-    .form-group select,
-    .form-group textarea {
-      width: 100%; padding: 10px 13px;
-      border: 1.5px solid var(--beige-mid); border-radius: 7px;
-      font-family: 'Inter', sans-serif; font-size: 0.9rem; color: var(--brown);
-      background: var(--white); transition: border-color 0.2s; outline: none;
-    }
-    .form-group input:focus,
-    .form-group select:focus,
-    .form-group textarea:focus { border-color: var(--gold-mid); }
-    .form-group textarea { height: 90px; resize: vertical; }
-    .form-disclaimer {
-      font-size: 0.7rem; color: var(--muted);
-      line-height: 1.55; margin-bottom: 14px;
-    }
-    .btn-submit {
-      width: 100%; padding: 13px; background: var(--gold); color: var(--white);
-      border: none; border-radius: 7px;
-      font-family: 'Inter', sans-serif; font-size: 0.95rem; font-weight: 600;
-      cursor: pointer; transition: background 0.2s, transform 0.15s;
-      letter-spacing: 0.02em;
-    }
-    .btn-submit:hover:not(:disabled) { background: var(--gold-mid); transform: translateY(-1px); }
-    .btn-submit:disabled { opacity: 0.7; cursor: not-allowed; }
-    .form-status {
-      margin-top: 10px; padding: 10px 14px; border-radius: 7px;
-      font-size: 0.85rem; font-weight: 500; display: none;
-    }
-    .form-status.success { background: #e6f7ec; color: #1a7a3c; border: 1px solid #b3dfbe; }
-    .form-status.error { background: #fdf0ed; color: #b03a2a; border: 1px solid #f0bfba; }
-
-    /* ── MAP ──────────────────────────────────── */
-    #map-section { padding: 0; }
-    .map-bar {
-      background: var(--brown); padding: 20px 56px;
-      display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 12px;
-    }
-    .map-bar-left { color: rgba(255,255,255,0.65); font-size: 0.88rem; }
-    .map-bar-left strong { color: var(--white); }
-    .map-link { color: var(--gold-mid); font-size: 0.85rem; font-weight: 500; text-decoration: none; transition: color 0.2s; }
-    .map-link:hover { color: #e0a820; }
-    .map-iframe-wrap { height: 320px; }
-    .map-iframe-wrap iframe { width: 100%; height: 100%; border: none; }
-
-    /* ── FOOTER ───────────────────────────────── */
-    footer { background: var(--brown); padding: 44px 56px 28px; }
-    .footer-grid {
-      max-width: 1100px; margin: 0 auto;
-      display: grid; grid-template-columns: 1.5fr 1fr 1fr; gap: 40px;
-      padding-bottom: 28px; border-bottom: 1px solid rgba(255,255,255,0.1);
-    }
-    .footer-brand-name {
-      font-family: 'Playfair Display', serif;
-      font-size: 1.1rem; color: var(--white); margin-bottom: 10px;
-    }
-    .footer-brand-name span { color: var(--gold-mid); }
-    .footer-disclaimer {
-      font-size: 0.7rem; color: rgba(255,255,255,0.32);
-      line-height: 1.6;
-    }
-    .footer-col-title {
-      font-size: 0.7rem; font-weight: 700; letter-spacing: 0.1em;
-      text-transform: uppercase; color: rgba(255,255,255,0.4);
-      margin-bottom: 14px;
-    }
-    .footer-links-list { list-style: none; display: flex; flex-direction: column; gap: 9px; }
-    .footer-links-list a {
-      color: rgba(255,255,255,0.55); text-decoration: none;
-      font-size: 0.85rem; transition: color 0.2s;
-    }
-    .footer-links-list a:hover { color: var(--white); }
-    .footer-copy {
-      max-width: 1100px; margin: 22px auto 0;
-      text-align: center; font-size: 0.72rem; color: rgba(255,255,255,0.2);
-    }
-
-    /* ── WHATSAPP ─────────────────────────────── */
-    .wa-float {
-      position: fixed; bottom: 24px; right: 24px; z-index: 999;
-      background: #25d366; color: var(--white);
-      width: 52px; height: 52px; border-radius: 50%;
-      display: flex; align-items: center; justify-content: center;
-      font-size: 1.4rem; text-decoration: none;
-      box-shadow: 0 4px 16px rgba(37,211,102,0.4); transition: transform 0.2s;
-    }
-    .wa-float:hover { transform: scale(1.08); }
-
-    /* ── FADE UP ──────────────────────────────── */
-    .fade-up { opacity: 0; transform: translateY(20px); transition: opacity 0.5s ease, transform 0.5s ease; }
-    .fade-up.visible { opacity: 1; transform: translateY(0); }
-
-    /* ── HAMBURGER ────────────────────────────── */
-    .nav-burger {
-      display: none;
-      flex-direction: column; justify-content: center; gap: 5px;
-      width: 36px; height: 36px;
-      background: none; border: none; cursor: pointer; padding: 4px;
-    }
-    .nav-burger span {
-      display: block; width: 22px; height: 2px;
-      background: var(--brown); border-radius: 2px;
-      transition: transform 0.25s, opacity 0.25s;
-    }
-    .nav-burger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
-    .nav-burger.open span:nth-child(2) { opacity: 0; }
-    .nav-burger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
-
-    /* ── MOBILE ───────────────────────────────── */
-    @media (max-width: 900px) {
-      nav { padding: 0 20px; position: relative; }
-      .nav-burger { display: flex; }
-      .nav-links {
-        display: none;
-        position: absolute; top: 100%; left: 0; right: 0;
-        background: var(--cream); border-bottom: var(--line);
-        flex-direction: column; gap: 0; padding: 8px 0; z-index: 199;
-        box-shadow: 0 4px 16px rgba(0,0,0,0.06);
-      }
-      .nav-links.open { display: flex; }
-      .nav-links li { width: 100%; }
-      .nav-links a { display: block; padding: 13px 24px; font-size: 0.95rem; border-bottom: var(--line); }
-      .nav-links li:last-child a { border-bottom: none; }
-      .nav-cta { margin: 10px 20px; border-radius: 6px; text-align: center; }
-      section { padding: 60px 20px; }
-      #hero { padding: 52px 20px 60px; }
-      .hero-inner { grid-template-columns: 1fr; gap: 40px; }
-      .hero-panel { display: none; }
-      .services-grid { grid-template-columns: 1fr; }
-      .steps-grid { grid-template-columns: 1fr 1fr; }
-      .about-grid { grid-template-columns: 1fr; gap: 36px; }
-      .testi-grid { grid-template-columns: 1fr; }
-      .contact-grid { grid-template-columns: 1fr; }
-      .contact-form { padding: 26px 20px; }
-      .form-row { grid-template-columns: 1fr; }
-      .map-bar { padding: 16px 20px; }
-      footer { padding: 36px 20px 20px; }
-      .footer-grid { grid-template-columns: 1fr; gap: 28px; }
-    }
-
-    /* ── SMALL PHONES (≤480px) ────────────────── */
-    @media (max-width: 480px) {
-      nav { height: 56px; }
-      .nav-logo { font-size: 1rem; }
-      h1 { font-size: clamp(1.6rem, 8vw, 2.2rem); }
-      h2 { font-size: clamp(1.35rem, 6vw, 1.8rem); }
-      #hero { padding: 36px 16px 48px; }
-      section { padding: 48px 16px; }
-      .steps-grid { grid-template-columns: 1fr; }
-      .step { border-right: none; border-bottom: var(--line); }
-      .step:last-child { border-bottom: none; }
-      .step-arrow { display: none; }
-      .service-card { padding: 22px 18px; }
-      .contact-form { padding: 20px 16px; }
-      .form-group input,
-      .form-group select,
-      .form-group textarea { font-size: 16px; }
-      footer { padding: 28px 16px 16px; }
-      .footer-copy { font-size: 0.65rem; }
-      .wa-float { bottom: 16px; right: 16px; width: 46px; height: 46px; font-size: 1.2rem; }
-    }
-
-    /* ── FAQ ──────────────────────────────────────────────── */
-    #faq { background: var(--cream); }
-    .faq-list { max-width: 720px; margin: 0 auto; display: flex; flex-direction: column; gap: 12px; }
-    details.faq-item {
-      background: var(--white); border: var(--line);
-      border-radius: 10px; overflow: hidden;
-    }
-    details.faq-item[open] { border-color: var(--beige-dark); }
-    summary.faq-q {
-      display: flex; justify-content: space-between; align-items: center;
-      padding: 18px 22px; cursor: pointer; list-style: none;
-      font-weight: 600; font-size: 0.97rem; color: var(--brown);
-      gap: 12px;
-    }
-    summary.faq-q::-webkit-details-marker { display: none; }
-    summary.faq-q::after {
-      content: '+'; font-size: 1.4rem; color: var(--gold);
-      flex-shrink: 0; transition: transform 0.2s;
-    }
-    details.faq-item[open] summary.faq-q::after { transform: rotate(45deg); }
-    .faq-a { padding: 0 22px 18px; color: var(--brown-mid); font-size: 0.92rem; line-height: 1.65; }
-
-    /* ── CALL BUTTON ──────────────────────────────────────── */
-    .contact-cta-row { display: flex; gap: 12px; margin-top: 10px; }
-    .contact-cta-row .wa-btn,
-    .contact-cta-row .call-btn { flex: 1; margin-top: 0; }
-    .call-btn {
-      display: flex; align-items: center; justify-content: center; gap: 8px;
-      padding: 14px 24px;
-      background: var(--white); border: 2px solid var(--gold);
-      border-radius: 8px; color: var(--gold);
-      font-weight: 600; font-size: 0.97rem; text-decoration: none;
-      transition: background 0.2s, color 0.2s;
-    }
-    .call-btn:hover { background: var(--gold); color: var(--white); }
-  </style>
+  /* ── Responsive ── */
+  @media(max-width:900px){
+    [data-resp="hero"]{grid-template-columns:1fr!important}
+    [data-resp="about-grid"]{grid-template-columns:1fr!important}
+    [data-resp="contacts-grid"]{grid-template-columns:1fr!important}
+    [data-resp="footer-grid"]{grid-template-columns:1fr!important}
+    .vtk-nav-desktop{display:none!important}
+    .vtk-nav-burger{display:flex!important}
+  }
+  @media(min-width:901px){
+    .vtk-nav-mobile{display:none!important}
+    .vtk-nav-burger{display:none!important}
+  }
+  @media(max-width:999px){
+    [data-resp="services-grid"]{grid-template-columns:repeat(2,1fr)!important}
+    [data-resp="reviews-grid"]{grid-template-columns:repeat(2,1fr)!important}
+    [data-resp="process-grid"]{grid-template-columns:repeat(2,1fr)!important}
+  }
+  @media(max-width:679px){
+    [data-resp="services-grid"]{grid-template-columns:1fr!important}
+    [data-resp="reviews-grid"]{grid-template-columns:1fr!important}
+  }
+  @media(max-width:559px){
+    [data-resp="process-grid"]{grid-template-columns:1fr!important}
+  }
+</style>
 </head>
 <body>
+<div style="overflow-x:hidden;">
 
-<!-- NAV -->
-<nav>
-  <a href="#hero" class="nav-logo">Visa <span>Travel</span> Kazan</a>
-  <button class="nav-burger" id="navBurger" aria-label="Меню">
-    <span></span><span></span><span></span>
-  </button>
-  <ul class="nav-links">
-    <li><a href="#services">Услуги</a></li>
-    <li><a href="#how">Процесс</a></li>
-    <li><a href="#about">О нас</a></li>
-    <li><a href="#contact" class="nav-cta">Связаться</a></li>
-  </ul>
+<!-- PROGRESS BAR -->
+<div id="vtk-progress" style="position:fixed;top:0;left:0;height:2.5px;width:0;background:linear-gradient(90deg,#a8842f,#f6e4a8);z-index:250;box-shadow:0 0 12px rgba(201,168,76,0.7);pointer-events:none;"></div>
+
+<!-- ====================== NAV ====================== -->
+<nav style="position:fixed;top:0;left:0;width:100%;z-index:200;background:rgba(15,27,45,0.82);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-bottom:1px solid rgba(201,168,76,0.22);">
+  <div style="max-width:1240px;margin:0 auto;padding:0 28px;height:72px;display:flex;align-items:center;justify-content:space-between;">
+    <a href="#top" id="nav-logo-link" style="display:flex;align-items:center;gap:11px;text-decoration:none;">
+      <span style="width:38px;height:38px;border:1.5px solid #c9a84c;border-radius:10px;display:flex;align-items:center;justify-content:center;flex-shrink:0;background:rgba(201,168,76,0.08);">
+        <svg width="21" height="21" viewBox="0 0 24 24" fill="#c9a84c" style="display:block;transform:translateY(-0.5px);"><path d="M17.8 19.2 16 11l3.5-3.5C21 6 21.5 4 21 3c-1-.5-3 0-4.5 1.5L13 8 4.8 6.2c-.5-.1-.9.1-1.1.5l-.3.5c-.2.5-.1 1 .3 1.3L9 12l-2 3H4l-1 1 3 2 2 3 1-1v-3l3-2 3.5 5.3c.3.4.8.5 1.3.3l.5-.2c.4-.3.6-.7.5-1.2z"/></svg>
+      </span>
+      <span style="font-family:'Playfair Display',serif;font-size:20px;font-weight:600;color:#f6f1e7;letter-spacing:0.3px;">Visa Travel <span style="color:#c9a84c;">Kazan</span></span>
+    </a>
+    <!-- Desktop nav -->
+    <div class="vtk-nav-desktop" style="display:flex;align-items:center;gap:34px;">
+      <a href="#services" class="vtk-nav-link" style="text-decoration:none;color:#cdd4de;font-size:14.5px;font-weight:400;letter-spacing:0.2px;">Услуги</a>
+      <a href="#process" class="vtk-nav-link" style="text-decoration:none;color:#cdd4de;font-size:14.5px;font-weight:400;letter-spacing:0.2px;">Процесс</a>
+      <a href="#about" class="vtk-nav-link" style="text-decoration:none;color:#cdd4de;font-size:14.5px;font-weight:400;letter-spacing:0.2px;">О нас</a>
+      <a href="#contacts" class="vtk-nav-link" style="text-decoration:none;color:#cdd4de;font-size:14.5px;font-weight:400;letter-spacing:0.2px;">Контакты</a>
+      <a href="#contacts" class="vtk-btn-cta" style="text-decoration:none;background:#c9a84c;color:#0f1b2d;font-size:14px;font-weight:600;padding:11px 22px;border-radius:8px;letter-spacing:0.2px;box-shadow:0 4px 16px rgba(201,168,76,0.28);">Связаться</a>
+    </div>
+    <!-- Burger -->
+    <button id="nav-burger" class="vtk-nav-burger" aria-label="Меню" style="display:none;background:transparent;border:1px solid rgba(201,168,76,0.4);border-radius:8px;width:42px;height:42px;flex-direction:column;align-items:center;justify-content:center;gap:4px;cursor:pointer;">
+      <span style="width:18px;height:2px;background:#c9a84c;border-radius:2px;display:block;"></span>
+      <span style="width:18px;height:2px;background:#c9a84c;border-radius:2px;display:block;"></span>
+      <span style="width:18px;height:2px;background:#c9a84c;border-radius:2px;display:block;"></span>
+    </button>
+  </div>
+  <!-- Mobile menu -->
+  <div id="nav-mobile-menu" class="vtk-nav-mobile" style="display:none;background:rgba(15,27,45,0.97);border-top:1px solid rgba(201,168,76,0.18);padding:14px 28px 22px;flex-direction:column;gap:4px;">
+    <a href="#services" class="vtk-close-menu" style="text-decoration:none;color:#cdd4de;font-size:16px;padding:12px 4px;border-bottom:1px solid rgba(255,255,255,0.05);display:block;">Услуги</a>
+    <a href="#process" class="vtk-close-menu" style="text-decoration:none;color:#cdd4de;font-size:16px;padding:12px 4px;border-bottom:1px solid rgba(255,255,255,0.05);display:block;">Процесс</a>
+    <a href="#about" class="vtk-close-menu" style="text-decoration:none;color:#cdd4de;font-size:16px;padding:12px 4px;border-bottom:1px solid rgba(255,255,255,0.05);display:block;">О нас</a>
+    <a href="#contacts" class="vtk-close-menu" style="text-decoration:none;color:#cdd4de;font-size:16px;padding:12px 4px;border-bottom:1px solid rgba(255,255,255,0.05);display:block;">Контакты</a>
+    <a href="#contacts" class="vtk-close-menu" style="text-decoration:none;background:#c9a84c;color:#0f1b2d;font-size:15px;font-weight:600;padding:13px;border-radius:8px;text-align:center;margin-top:10px;display:block;">Связаться</a>
+  </div>
 </nav>
 
-<!-- HERO -->
-<section id="hero">
-  <div class="hero-inner">
-    <div class="hero-left">
-      <div class="hero-badge">Визовый специалист · Казань</div>
-      <h1>Помощь с документами<br/>для вашей <em>визы</em></h1>
-      <p class="hero-desc">
-        Помогаем правильно собрать и оформить пакет документов для визовой заявки.
-        Более 15 лет работы с разными консульствами и странами.
-      </p>
-      <p class="hero-disclaimer">
-        * Мы помогаем в подготовке документов. Решение о выдаче визы принимается консульством
-        самостоятельно — мы не несём ответственности за его исход.
-      </p>
-      <div class="hero-actions">
-        <a href="#contact" class="btn-primary">Оставить заявку</a>
-        <a href="#services" class="btn-ghost">Наши услуги</a>
+<!-- ====================== HERO ====================== -->
+<section id="top" style="position:relative;background:#0f1b2d;padding:124px 28px 0;overflow:hidden;">
+  <div style="position:absolute;top:-120px;right:-80px;width:560px;height:560px;background:radial-gradient(circle,rgba(201,168,76,0.18),transparent 65%);pointer-events:none;animation:vtk-float 19s ease-in-out infinite;"></div>
+  <div style="position:absolute;bottom:-160px;left:-120px;width:520px;height:520px;background:radial-gradient(circle,rgba(201,168,76,0.08),transparent 65%);pointer-events:none;animation:vtk-float2 23s ease-in-out infinite;"></div>
+  <div style="max-width:1240px;margin:0 auto;position:relative;">
+    <div data-resp="hero" style="display:grid;grid-template-columns:1.12fr 0.88fr;gap:56px;align-items:center;padding-bottom:96px;">
+      <div data-reveal-blur>
+        <div style="display:inline-flex;align-items:center;gap:9px;border:1px solid rgba(201,168,76,0.4);border-radius:100px;padding:7px 16px;margin-bottom:28px;">
+          <span style="width:7px;height:7px;border-radius:50%;background:#c9a84c;"></span>
+          <span style="color:#c9a84c;font-size:12.5px;letter-spacing:1.6px;text-transform:uppercase;font-weight:500;">Визовое агентство · Казань</span>
+        </div>
+        <h1 style="font-family:'Playfair Display',serif;color:#f6f1e7;font-size:clamp(40px,5.4vw,68px);line-height:1.06;font-weight:600;margin:0 0 24px;letter-spacing:-0.5px;">Помощь с документами<br>для вашей <span style="font-style:italic;color:#c9a84c;background:linear-gradient(105deg,#a8842f 0%,#c9a84c 28%,#f7e6ac 50%,#c9a84c 72%,#a8842f 100%);background-size:300% 100%;-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;animation:vtk-shine 5.5s linear infinite;">визы</span></h1>
+        <p style="color:#aeb7c4;font-size:clamp(16px,1.6vw,18.5px);line-height:1.65;max-width:540px;margin:0 0 18px;font-weight:300;">Помогаем правильно собрать и оформить пакет документов для визовой заявки. Более 15 лет работы с разными консульствами и странами.</p>
+        <p style="color:#6f7a8a;font-size:12.5px;line-height:1.55;max-width:520px;margin:0 0 34px;font-style:italic;">* Мы помогаем в подготовке документов. Решение о выдаче визы принимается консульством самостоятельно.</p>
+        <div style="display:flex;flex-wrap:wrap;gap:14px;">
+          <a href="#contacts" class="vtk-btn-primary" style="text-decoration:none;background:#c9a84c;color:#0f1b2d;font-size:15.5px;font-weight:600;padding:15px 30px;border-radius:9px;letter-spacing:0.2px;box-shadow:0 8px 24px rgba(201,168,76,0.3);">Оставить заявку</a>
+          <a href="#services" class="vtk-btn-ghost" style="text-decoration:none;background:transparent;color:#f6f1e7;font-size:15.5px;font-weight:500;padding:15px 30px;border-radius:9px;border:1px solid rgba(246,241,231,0.28);">Наши услуги</a>
+        </div>
       </div>
-    </div>
-    <div class="hero-right">
-      <div class="hero-panel">
-        <div class="hero-panel-title">Немного о нас</div>
-        <div class="stat-row">
-          <div class="stat-item">
-            <div class="stat-icon">👩‍💼</div>
-            <div>
-              <div class="stat-val">15 лет</div>
-              <div class="stat-lbl">Опыта в визовой сфере</div>
+      <div data-reveal-blur-d2>
+        <div style="background:linear-gradient(160deg,rgba(255,255,255,0.07),rgba(255,255,255,0.02));border:1px solid rgba(201,168,76,0.28);border-radius:20px;padding:40px 38px;backdrop-filter:blur(6px);">
+          <div style="font-family:'Playfair Display',serif;color:#f6f1e7;font-size:20px;font-weight:500;margin-bottom:30px;">Почему нам доверяют</div>
+          <div style="display:flex;flex-direction:column;gap:0;">
+            <div style="display:flex;align-items:baseline;justify-content:space-between;padding:18px 0;border-bottom:1px solid rgba(255,255,255,0.08);">
+              <span class="vtk-count" data-target="15" data-suffix="" style="font-family:'Playfair Display',serif;color:#c9a84c;font-size:52px;font-weight:600;line-height:1;">0</span>
+              <span style="color:#aeb7c4;font-size:14.5px;text-align:right;max-width:140px;">лет опыта</span>
             </div>
-          </div>
-          <div class="stat-item">
-            <div class="stat-icon">🌍</div>
-            <div>
-              <div class="stat-val">30+ стран</div>
-              <div class="stat-lbl">Направлений</div>
+            <div style="display:flex;align-items:baseline;justify-content:space-between;padding:18px 0;border-bottom:1px solid rgba(255,255,255,0.08);">
+              <span class="vtk-count" data-target="30" data-suffix="+" style="font-family:'Playfair Display',serif;color:#c9a84c;font-size:52px;font-weight:600;line-height:1;">0</span>
+              <span style="color:#aeb7c4;font-size:14.5px;text-align:right;max-width:140px;">стран в работе</span>
             </div>
-          </div>
-          <div class="stat-item">
-            <div class="stat-icon">👥</div>
-            <div>
-              <div class="stat-val">500+</div>
-              <div class="stat-lbl">Клиентов</div>
+            <div style="display:flex;align-items:baseline;justify-content:space-between;padding:18px 0;">
+              <span class="vtk-count" data-target="500" data-suffix="+" style="font-family:'Playfair Display',serif;color:#c9a84c;font-size:52px;font-weight:600;line-height:1;">0</span>
+              <span style="color:#aeb7c4;font-size:14.5px;text-align:right;max-width:140px;">довольных клиентов</span>
             </div>
           </div>
         </div>
-        <a href="https://wa.me/79872960512" target="_blank" class="hero-panel-cta">
-          💬 Написать в WhatsApp
-        </a>
       </div>
     </div>
   </div>
 </section>
 
-<!-- COUNTRIES -->
-<div id="countries">
-  <div class="countries-label">Страны, с которыми мы работаем</div>
-  <div class="countries-track">
-    <span class="country-item"><span class="flag">🇩🇪</span> Германия</span>
-    <span class="country-item"><span class="flag">🇫🇷</span> Франция</span>
-    <span class="country-item"><span class="flag">🇮🇹</span> Италия</span>
-    <span class="country-item"><span class="flag">🇪🇸</span> Испания</span>
-    <span class="country-item"><span class="flag">🇬🇧</span> Великобритания</span>
-    <span class="country-item"><span class="flag">🇺🇸</span> США</span>
-    <span class="country-item"><span class="flag">🇦🇪</span> ОАЭ</span>
-    <span class="country-item"><span class="flag">🇨🇿</span> Чехия</span>
-    <span class="country-item"><span class="flag">🇨🇳</span> Китай</span>
-    <span class="country-item"><span class="flag">🇯🇵</span> Япония</span>
-    <span class="country-item"><span class="flag">🇹🇭</span> Таиланд</span>
-    <span class="country-item"><span class="flag">🇬🇷</span> Греция</span>
-    <span class="country-item"><span class="flag">🇩🇪</span> Германия</span>
-    <span class="country-item"><span class="flag">🇫🇷</span> Франция</span>
-    <span class="country-item"><span class="flag">🇮🇹</span> Италия</span>
-    <span class="country-item"><span class="flag">🇪🇸</span> Испания</span>
-    <span class="country-item"><span class="flag">🇬🇧</span> Великобритания</span>
-    <span class="country-item"><span class="flag">🇺🇸</span> США</span>
-    <span class="country-item"><span class="flag">🇦🇪</span> ОАЭ</span>
-    <span class="country-item"><span class="flag">🇨🇿</span> Чехия</span>
-    <span class="country-item"><span class="flag">🇨🇳</span> Китай</span>
-    <span class="country-item"><span class="flag">🇯🇵</span> Япония</span>
-    <span class="country-item"><span class="flag">🇹🇭</span> Таиланд</span>
-    <span class="country-item"><span class="flag">🇬🇷</span> Греция</span>
+<!-- ====================== MARQUEE ====================== -->
+<div style="background:#0c1626;border-top:1px solid rgba(201,168,76,0.14);border-bottom:1px solid rgba(201,168,76,0.14);padding:22px 0;overflow:hidden;" class="vtk-marquee-wrap">
+  <div class="vtk-marquee" style="display:flex;gap:0;width:max-content;animation:vtk-marquee 42s linear infinite;">
+    <div style="display:flex;align-items:center;gap:12px;padding:0 34px;border-right:1px solid rgba(255,255,255,0.06);white-space:nowrap;"><span style="font-size:24px;">🇩🇪</span><span style="color:#cdd4de;font-size:16px;font-weight:400;letter-spacing:0.3px;">Германия</span></div>
+    <div style="display:flex;align-items:center;gap:12px;padding:0 34px;border-right:1px solid rgba(255,255,255,0.06);white-space:nowrap;"><span style="font-size:24px;">🇫🇷</span><span style="color:#cdd4de;font-size:16px;font-weight:400;letter-spacing:0.3px;">Франция</span></div>
+    <div style="display:flex;align-items:center;gap:12px;padding:0 34px;border-right:1px solid rgba(255,255,255,0.06);white-space:nowrap;"><span style="font-size:24px;">🇮🇹</span><span style="color:#cdd4de;font-size:16px;font-weight:400;letter-spacing:0.3px;">Италия</span></div>
+    <div style="display:flex;align-items:center;gap:12px;padding:0 34px;border-right:1px solid rgba(255,255,255,0.06);white-space:nowrap;"><span style="font-size:24px;">🇪🇸</span><span style="color:#cdd4de;font-size:16px;font-weight:400;letter-spacing:0.3px;">Испания</span></div>
+    <div style="display:flex;align-items:center;gap:12px;padding:0 34px;border-right:1px solid rgba(255,255,255,0.06);white-space:nowrap;"><span style="font-size:24px;">🇬🇧</span><span style="color:#cdd4de;font-size:16px;font-weight:400;letter-spacing:0.3px;">Великобритания</span></div>
+    <div style="display:flex;align-items:center;gap:12px;padding:0 34px;border-right:1px solid rgba(255,255,255,0.06);white-space:nowrap;"><span style="font-size:24px;">🇺🇸</span><span style="color:#cdd4de;font-size:16px;font-weight:400;letter-spacing:0.3px;">США</span></div>
+    <div style="display:flex;align-items:center;gap:12px;padding:0 34px;border-right:1px solid rgba(255,255,255,0.06);white-space:nowrap;"><span style="font-size:24px;">🇨🇿</span><span style="color:#cdd4de;font-size:16px;font-weight:400;letter-spacing:0.3px;">Чехия</span></div>
+    <div style="display:flex;align-items:center;gap:12px;padding:0 34px;border-right:1px solid rgba(255,255,255,0.06);white-space:nowrap;"><span style="font-size:24px;">🇨🇳</span><span style="color:#cdd4de;font-size:16px;font-weight:400;letter-spacing:0.3px;">Китай</span></div>
+    <div style="display:flex;align-items:center;gap:12px;padding:0 34px;border-right:1px solid rgba(255,255,255,0.06);white-space:nowrap;"><span style="font-size:24px;">🇯🇵</span><span style="color:#cdd4de;font-size:16px;font-weight:400;letter-spacing:0.3px;">Япония</span></div>
+    <div style="display:flex;align-items:center;gap:12px;padding:0 34px;border-right:1px solid rgba(255,255,255,0.06);white-space:nowrap;"><span style="font-size:24px;">🇹🇭</span><span style="color:#cdd4de;font-size:16px;font-weight:400;letter-spacing:0.3px;">Таиланд</span></div>
+    <div style="display:flex;align-items:center;gap:12px;padding:0 34px;border-right:1px solid rgba(255,255,255,0.06);white-space:nowrap;"><span style="font-size:24px;">🇬🇷</span><span style="color:#cdd4de;font-size:16px;font-weight:400;letter-spacing:0.3px;">Греция</span></div>
+    <div style="display:flex;align-items:center;gap:12px;padding:0 34px;border-right:1px solid rgba(255,255,255,0.06);white-space:nowrap;"><span style="font-size:24px;">🇮🇳</span><span style="color:#cdd4de;font-size:16px;font-weight:400;letter-spacing:0.3px;">Индия</span></div>
+    <!-- duplicate for seamless loop -->
+    <div style="display:flex;align-items:center;gap:12px;padding:0 34px;border-right:1px solid rgba(255,255,255,0.06);white-space:nowrap;"><span style="font-size:24px;">🇩🇪</span><span style="color:#cdd4de;font-size:16px;font-weight:400;letter-spacing:0.3px;">Германия</span></div>
+    <div style="display:flex;align-items:center;gap:12px;padding:0 34px;border-right:1px solid rgba(255,255,255,0.06);white-space:nowrap;"><span style="font-size:24px;">🇫🇷</span><span style="color:#cdd4de;font-size:16px;font-weight:400;letter-spacing:0.3px;">Франция</span></div>
+    <div style="display:flex;align-items:center;gap:12px;padding:0 34px;border-right:1px solid rgba(255,255,255,0.06);white-space:nowrap;"><span style="font-size:24px;">🇮🇹</span><span style="color:#cdd4de;font-size:16px;font-weight:400;letter-spacing:0.3px;">Италия</span></div>
+    <div style="display:flex;align-items:center;gap:12px;padding:0 34px;border-right:1px solid rgba(255,255,255,0.06);white-space:nowrap;"><span style="font-size:24px;">🇪🇸</span><span style="color:#cdd4de;font-size:16px;font-weight:400;letter-spacing:0.3px;">Испания</span></div>
+    <div style="display:flex;align-items:center;gap:12px;padding:0 34px;border-right:1px solid rgba(255,255,255,0.06);white-space:nowrap;"><span style="font-size:24px;">🇬🇧</span><span style="color:#cdd4de;font-size:16px;font-weight:400;letter-spacing:0.3px;">Великобритания</span></div>
+    <div style="display:flex;align-items:center;gap:12px;padding:0 34px;border-right:1px solid rgba(255,255,255,0.06);white-space:nowrap;"><span style="font-size:24px;">🇺🇸</span><span style="color:#cdd4de;font-size:16px;font-weight:400;letter-spacing:0.3px;">США</span></div>
+    <div style="display:flex;align-items:center;gap:12px;padding:0 34px;border-right:1px solid rgba(255,255,255,0.06);white-space:nowrap;"><span style="font-size:24px;">🇨🇿</span><span style="color:#cdd4de;font-size:16px;font-weight:400;letter-spacing:0.3px;">Чехия</span></div>
+    <div style="display:flex;align-items:center;gap:12px;padding:0 34px;border-right:1px solid rgba(255,255,255,0.06);white-space:nowrap;"><span style="font-size:24px;">🇨🇳</span><span style="color:#cdd4de;font-size:16px;font-weight:400;letter-spacing:0.3px;">Китай</span></div>
+    <div style="display:flex;align-items:center;gap:12px;padding:0 34px;border-right:1px solid rgba(255,255,255,0.06);white-space:nowrap;"><span style="font-size:24px;">🇯🇵</span><span style="color:#cdd4de;font-size:16px;font-weight:400;letter-spacing:0.3px;">Япония</span></div>
+    <div style="display:flex;align-items:center;gap:12px;padding:0 34px;border-right:1px solid rgba(255,255,255,0.06);white-space:nowrap;"><span style="font-size:24px;">🇹🇭</span><span style="color:#cdd4de;font-size:16px;font-weight:400;letter-spacing:0.3px;">Таиланд</span></div>
+    <div style="display:flex;align-items:center;gap:12px;padding:0 34px;border-right:1px solid rgba(255,255,255,0.06);white-space:nowrap;"><span style="font-size:24px;">🇬🇷</span><span style="color:#cdd4de;font-size:16px;font-weight:400;letter-spacing:0.3px;">Греция</span></div>
+    <div style="display:flex;align-items:center;gap:12px;padding:0 34px;border-right:1px solid rgba(255,255,255,0.06);white-space:nowrap;"><span style="font-size:24px;">🇮🇳</span><span style="color:#cdd4de;font-size:16px;font-weight:400;letter-spacing:0.3px;">Индия</span></div>
   </div>
 </div>
 
-<!-- SERVICES -->
-<section id="services">
-  <div class="container">
-    <div class="section-eyebrow"><span>Чем мы занимаемся</span></div>
-    <h2>Услуги</h2>
-    <p class="section-sub">Помогаю разобраться в требованиях посольства, собрать нужные документы и правильно оформить заявку.</p>
-    <div class="services-grid">
-      <div class="service-card fade-up">
-        <div class="service-icon">🇪🇺</div>
-        <h3>Шенгенская виза</h3>
-        <p>Однократные и мультивизы в страны Шенгенской зоны. Помощь с пакетом документов, бронями и записью на приём.</p>
+<!-- ====================== SERVICES ====================== -->
+<section id="services" style="padding:96px 28px;background:#f6f1e7;">
+  <div style="max-width:1240px;margin:0 auto;">
+    <div data-reveal style="text-align:center;margin-bottom:56px;">
+      <div style="color:#b08f3c;font-size:12.5px;letter-spacing:2px;text-transform:uppercase;font-weight:600;margin-bottom:14px;">Чем мы занимаемся</div>
+      <h2 style="font-family:'Playfair Display',serif;font-size:clamp(34px,4vw,50px);font-weight:600;margin:0;letter-spacing:-0.5px;">Услуги</h2>
+    </div>
+    <div data-resp="services-grid" style="display:grid;grid-template-columns:repeat(3,1fr);gap:24px;">
+      <div data-reveal class="vtk-service-card" style="background:#fffdf8;border:1px solid rgba(15,27,45,0.08);border-radius:16px;padding:34px 30px;">
+        <div style="width:56px;height:56px;border-radius:13px;background:rgba(201,168,76,0.12);display:flex;align-items:center;justify-content:center;font-size:28px;margin-bottom:22px;">🇪🇺</div>
+        <h3 style="font-family:'Playfair Display',serif;font-size:23px;font-weight:600;margin:0 0 12px;">Шенгенская виза</h3>
+        <p style="color:#56616f;font-size:15px;line-height:1.62;margin:0;font-weight:300;">Однократные и мультивизы в страны Шенгенской зоны. Помощь с пакетом документов, бронями и записью на приём.</p>
       </div>
-      <div class="service-card fade-up">
-        <div class="service-icon">🇺🇸</div>
-        <h3>Виза США</h3>
-        <p>Заполнение анкеты DS-160, подготовка документов, рекомендации по собеседованию. Категории B1/B2 и деловые визы.</p>
+      <div data-reveal class="vtk-service-card" style="background:#fffdf8;border:1px solid rgba(15,27,45,0.08);border-radius:16px;padding:34px 30px;">
+        <div style="width:56px;height:56px;border-radius:13px;background:rgba(201,168,76,0.12);display:flex;align-items:center;justify-content:center;font-size:28px;margin-bottom:22px;">🇺🇸</div>
+        <h3 style="font-family:'Playfair Display',serif;font-size:23px;font-weight:600;margin:0 0 12px;">Виза США</h3>
+        <p style="color:#56616f;font-size:15px;line-height:1.62;margin:0;font-weight:300;">Заполнение анкеты DS-160, подготовка документов, рекомендации по собеседованию. Категории B1/B2 и деловые визы.</p>
       </div>
-      <div class="service-card fade-up">
-        <div class="service-icon">🇬🇧</div>
-        <h3>Виза в Великобританию</h3>
-        <p>Туристические, рабочие и студенческие визы в UK. Помощь с анкетой, сбором документов и записью на интервью.</p>
+      <div data-reveal class="vtk-service-card" style="background:#fffdf8;border:1px solid rgba(15,27,45,0.08);border-radius:16px;padding:34px 30px;">
+        <div style="width:56px;height:56px;border-radius:13px;background:rgba(201,168,76,0.12);display:flex;align-items:center;justify-content:center;font-size:28px;margin-bottom:22px;">🇬🇧</div>
+        <h3 style="font-family:'Playfair Display',serif;font-size:23px;font-weight:600;margin:0 0 12px;">Виза в Великобританию</h3>
+        <p style="color:#56616f;font-size:15px;line-height:1.62;margin:0;font-weight:300;">Туристические, рабочие и студенческие визы в UK. Помощь с анкетой, сбором документов и записью на интервью.</p>
       </div>
-      <div class="service-card fade-up">
-        <div class="service-icon">🌏</div>
-        <h3>Азиатские визы</h3>
-        <p>Китай, Япония, Таиланд, Индия и другие страны. Полный список документов и помощь с заполнением форм.</p>
+      <div data-reveal class="vtk-service-card" style="background:#fffdf8;border:1px solid rgba(15,27,45,0.08);border-radius:16px;padding:34px 30px;">
+        <div style="width:56px;height:56px;border-radius:13px;background:rgba(201,168,76,0.12);display:flex;align-items:center;justify-content:center;font-size:28px;margin-bottom:22px;">🌏</div>
+        <h3 style="font-family:'Playfair Display',serif;font-size:23px;font-weight:600;margin:0 0 12px;">Азиатские визы</h3>
+        <p style="color:#56616f;font-size:15px;line-height:1.62;margin:0;font-weight:300;">Китай, Япония, Таиланд, Индия и другие страны. Полный список документов и помощь с заполнением форм.</p>
       </div>
-      <div class="service-card fade-up">
-        <div class="service-icon">✈️</div>
-        <h3>Туры под ключ</h3>
-        <p>Подбор перелётов, отелей и экскурсий под маршрут и бюджет. Рекомендации на основе реального опыта.</p>
+      <div data-reveal class="vtk-service-card" style="background:#fffdf8;border:1px solid rgba(15,27,45,0.08);border-radius:16px;padding:34px 30px;">
+        <div style="width:56px;height:56px;border-radius:13px;background:rgba(201,168,76,0.12);display:flex;align-items:center;justify-content:center;font-size:28px;margin-bottom:22px;">✈️</div>
+        <h3 style="font-family:'Playfair Display',serif;font-size:23px;font-weight:600;margin:0 0 12px;">Туры под ключ</h3>
+        <p style="color:#56616f;font-size:15px;line-height:1.62;margin:0;font-weight:300;">Подбор перелётов, отелей и экскурсий под маршрут и бюджет. Рекомендации на основе реального опыта.</p>
       </div>
-      <div class="service-card fade-up">
-        <div class="service-icon">⚡</div>
-        <h3>Срочная консультация</h3>
-        <p>Нужна виза в короткие сроки? Поможем с приоритетной записью и ускоренной подготовкой документов.</p>
+      <div data-reveal class="vtk-service-card" style="background:#fffdf8;border:1px solid rgba(15,27,45,0.08);border-radius:16px;padding:34px 30px;">
+        <div style="width:56px;height:56px;border-radius:13px;background:rgba(201,168,76,0.12);display:flex;align-items:center;justify-content:center;font-size:28px;margin-bottom:22px;">⚡</div>
+        <h3 style="font-family:'Playfair Display',serif;font-size:23px;font-weight:600;margin:0 0 12px;">Срочная консультация</h3>
+        <p style="color:#56616f;font-size:15px;line-height:1.62;margin:0;font-weight:300;">Нужна виза в короткие сроки? Поможем с приоритетной записью и ускоренной подготовкой документов.</p>
       </div>
     </div>
-    <div class="services-disclaimer">
-      <span class="services-disclaimer-icon">ℹ️</span>
-      <p>Visa Travel Kazan оказывает помощь в подготовке документов для визовой заявки. Решение о выдаче визы принимается исключительно консульством или посольством страны назначения — сроки и результат рассмотрения находятся вне нашего контроля.</p>
+    <div data-reveal style="margin-top:32px;background:rgba(15,27,45,0.04);border:1px solid rgba(15,27,45,0.08);border-left:3px solid #c9a84c;border-radius:10px;padding:18px 24px;">
+      <p style="color:#56616f;font-size:13.5px;line-height:1.6;margin:0;">ℹ️ Visa Travel Kazan оказывает помощь в подготовке документов. Решение о выдаче визы принимается исключительно консульством — сроки и результат находятся вне нашего контроля.</p>
     </div>
   </div>
 </section>
 
-<!-- HOW IT WORKS -->
-<section id="how">
-  <div class="container">
-    <div class="section-eyebrow"><span>Как это работает</span></div>
-    <h2>Четыре шага</h2>
-    <p class="section-sub">От первого обращения до подачи готовой заявки в посольство</p>
-    <div class="steps-grid fade-up">
-      <div class="step">
-        <div class="step-num">01</div>
-        <div class="step-line"></div>
-        <h4>Заявка</h4>
-        <p>Пишете нам, указываете страну и примерные даты поездки.</p>
-        <div class="step-arrow">→</div>
+<!-- ====================== PROCESS ====================== -->
+<section id="process" style="padding:96px 28px;background:#0f1b2d;position:relative;overflow:hidden;">
+  <div style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:700px;height:700px;background:radial-gradient(circle,rgba(201,168,76,0.07),transparent 60%);pointer-events:none;animation:vtk-glow 9s ease-in-out infinite;"></div>
+  <div style="max-width:1240px;margin:0 auto;position:relative;">
+    <div data-reveal style="text-align:center;margin-bottom:60px;">
+      <div style="color:#c9a84c;font-size:12.5px;letter-spacing:2px;text-transform:uppercase;font-weight:600;margin-bottom:14px;">Как это работает</div>
+      <h2 style="font-family:'Playfair Display',serif;font-size:clamp(34px,4vw,50px);font-weight:600;margin:0;color:#f6f1e7;letter-spacing:-0.5px;">Четыре шага</h2>
+    </div>
+    <div data-resp="process-grid" style="display:grid;grid-template-columns:repeat(4,1fr);gap:26px;">
+      <div data-reveal>
+        <div style="width:54px;height:54px;border-radius:50%;border:1.5px solid #c9a84c;color:#c9a84c;display:flex;align-items:center;justify-content:center;font-family:'Playfair Display',serif;font-size:24px;font-weight:600;margin-bottom:22px;">1</div>
+        <h3 style="font-family:'Playfair Display',serif;font-size:22px;font-weight:600;margin:0 0 11px;color:#f6f1e7;">Заявка</h3>
+        <p style="color:#9aa6b5;font-size:14.5px;line-height:1.62;margin:0;font-weight:300;">Пишете нам, указываете страну и примерные даты поездки.</p>
       </div>
-      <div class="step">
-        <div class="step-num">02</div>
-        <div class="step-line"></div>
-        <h4>Консультация</h4>
-        <p>Мы разбираем вашу ситуацию и составляем список нужных документов.</p>
-        <div class="step-arrow">→</div>
+      <div data-reveal>
+        <div style="width:54px;height:54px;border-radius:50%;border:1.5px solid #c9a84c;color:#c9a84c;display:flex;align-items:center;justify-content:center;font-family:'Playfair Display',serif;font-size:24px;font-weight:600;margin-bottom:22px;">2</div>
+        <h3 style="font-family:'Playfair Display',serif;font-size:22px;font-weight:600;margin:0 0 11px;color:#f6f1e7;">Консультация</h3>
+        <p style="color:#9aa6b5;font-size:14.5px;line-height:1.62;margin:0;font-weight:300;">Мы разбираем вашу ситуацию и составляем список нужных документов.</p>
       </div>
-      <div class="step">
-        <div class="step-num">03</div>
-        <div class="step-line"></div>
-        <h4>Подготовка</h4>
-        <p>Помогаем собрать документы, заполнить анкеты и записаться на приём.</p>
-        <div class="step-arrow">→</div>
+      <div data-reveal>
+        <div style="width:54px;height:54px;border-radius:50%;border:1.5px solid #c9a84c;color:#c9a84c;display:flex;align-items:center;justify-content:center;font-family:'Playfair Display',serif;font-size:24px;font-weight:600;margin-bottom:22px;">3</div>
+        <h3 style="font-family:'Playfair Display',serif;font-size:22px;font-weight:600;margin:0 0 11px;color:#f6f1e7;">Подготовка</h3>
+        <p style="color:#9aa6b5;font-size:14.5px;line-height:1.62;margin:0;font-weight:300;">Помогаем собрать документы, заполнить анкеты и записаться на приём.</p>
       </div>
-      <div class="step">
-        <div class="step-num">04</div>
-        <div class="step-line"></div>
-        <h4>Подача</h4>
-        <p>Вы подаёте готовый пакет в посольство. Решение — за консульством.</p>
+      <div data-reveal>
+        <div style="width:54px;height:54px;border-radius:50%;border:1.5px solid #c9a84c;color:#c9a84c;display:flex;align-items:center;justify-content:center;font-family:'Playfair Display',serif;font-size:24px;font-weight:600;margin-bottom:22px;">4</div>
+        <h3 style="font-family:'Playfair Display',serif;font-size:22px;font-weight:600;margin:0 0 11px;color:#f6f1e7;">Подача</h3>
+        <p style="color:#9aa6b5;font-size:14.5px;line-height:1.62;margin:0;font-weight:300;">Вы подаёте готовый пакет в посольство. Решение — за консульством.</p>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ABOUT -->
-<section id="about">
-  <div class="container">
-    <div class="about-grid">
-      <div class="julia-card fade-up">
-        <div class="julia-card-top">
-          <div class="julia-avatar">👩</div>
-          <div class="julia-name">Юлия</div>
-          <div class="julia-role">Visa Travel Kazan · Казань</div>
-        </div>
-        <div class="julia-card-body">
-          <div class="julia-quote">
-            Наша задача — сделать так, чтобы вы пришли в посольство с правильно оформленными документами. Остальное зависит от консульства.
-          </div>
-          <div class="julia-stats">
-            <div class="julia-stat">
-              <div class="julia-stat-num">15 лет</div>
-              <div class="julia-stat-lbl">Опыта</div>
-            </div>
-            <div class="julia-stat">
-              <div class="julia-stat-num">500+</div>
-              <div class="julia-stat-lbl">Клиентов</div>
-            </div>
-            <div class="julia-stat">
-              <div class="julia-stat-num">30+</div>
-              <div class="julia-stat-lbl">Стран</div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="about-text fade-up">
-        <div class="section-eyebrow"><span>О нас</span></div>
-        <h2>Личный подход<br/>к каждой <em>заявке</em></h2>
-        <p>
-          Visa Travel Kazan — агентство в Казани. Мы работаем с каждым клиентом лично:
-          никаких call-центров и общих инструкций. Вы получаете конкретную помощь именно в вашей ситуации.
-        </p>
-        <p>
-          За 15 лет работы накоплен большой опыт с разными консульствами и типами виз —
-          это помогает правильно подготовить документы и избежать типичных ошибок при подаче.
-        </p>
-        <div class="about-values">
-          <div class="value-item">
-            <div class="value-icon">🎯</div>
-            <div class="value-text"><strong>Персонально</strong> — мы лично ведём каждую заявку</div>
-          </div>
-          <div class="value-item">
-            <div class="value-icon">📋</div>
-            <div class="value-text"><strong>Прозрачно</strong> — вы знаете, какие документы нужны и почему</div>
-          </div>
-          <div class="value-item">
-            <div class="value-icon">🤝</div>
-            <div class="value-text"><strong>Честно</strong> — мы не обещаем того, что от нас не зависит</div>
-          </div>
-        </div>
-      </div>
+<!-- ====================== ABOUT ====================== -->
+<section id="about" style="padding:96px 28px;background:#f6f1e7;">
+  <div style="max-width:1240px;margin:0 auto;">
+    <div data-reveal style="margin-bottom:52px;">
+      <div style="color:#b08f3c;font-size:12.5px;letter-spacing:2px;text-transform:uppercase;font-weight:600;margin-bottom:14px;">О нас</div>
+      <h2 style="font-family:'Playfair Display',serif;font-size:clamp(32px,3.6vw,46px);font-weight:600;margin:0;letter-spacing:-0.5px;max-width:640px;">Личный подход к каждой заявке</h2>
     </div>
-  </div>
-</section>
-
-<!-- TESTIMONIALS -->
-<section id="testimonials">
-  <div class="container">
-    <div class="section-eyebrow"><span>Отзывы</span></div>
-    <h2>Что говорят клиенты</h2>
-    <p class="section-sub">Отзывы людей, которые обращались за помощью с документами</p>
-    <div class="testi-grid">
-      <div class="testi-card fade-up">
-        <span class="testi-quote-mark">"</span>
-        <div class="stars">★★★★★</div>
-        <p class="testi-text">Юлия помогла разобраться со всеми документами для шенгенской визы. Объяснила что нужно, как правильно заполнить — всё было подготовлено чётко. Визу получила.</p>
-        <div class="testi-divider"></div>
-        <div class="testi-author">
-          <div class="testi-avatar">🙋</div>
+    <div data-resp="about-grid" style="display:grid;grid-template-columns:0.95fr 1.05fr;gap:48px;align-items:start;">
+      <div data-reveal style="background:#0f1b2d;border-radius:20px;padding:40px 36px;position:relative;overflow:hidden;">
+        <div style="position:absolute;top:-60px;right:-60px;width:240px;height:240px;background:radial-gradient(circle,rgba(201,168,76,0.16),transparent 65%);"></div>
+        <div style="position:relative;display:flex;align-items:center;gap:18px;margin-bottom:28px;">
+          <div style="width:68px;height:68px;border-radius:50%;background:rgba(201,168,76,0.15);border:1.5px solid rgba(201,168,76,0.5);display:flex;align-items:center;justify-content:center;font-size:34px;">👩</div>
           <div>
-            <div class="testi-name">Алина К.</div>
-            <div class="testi-dest">Шенгенская виза, Италия</div>
+            <div style="font-family:'Playfair Display',serif;color:#f6f1e7;font-size:24px;font-weight:600;">Юлия</div>
+            <div style="color:#c9a84c;font-size:13.5px;letter-spacing:0.4px;margin-top:3px;">Visa Travel Kazan · Казань</div>
           </div>
         </div>
-      </div>
-      <div class="testi-card fade-up">
-        <span class="testi-quote-mark">"</span>
-        <div class="stars">★★★★★</div>
-        <p class="testi-text">Помогла с подготовкой документов для визы в США — анкета, подготовка к интервью, список бумаг. Всё оказалось гораздо понятнее, чем я думал.</p>
-        <div class="testi-divider"></div>
-        <div class="testi-author">
-          <div class="testi-avatar">🙋‍♂️</div>
-          <div>
-            <div class="testi-name">Марат Р.</div>
-            <div class="testi-dest">Виза США, B1/B2</div>
-          </div>
+        <p style="position:relative;color:#dfe4ec;font-family:'Playfair Display',serif;font-style:italic;font-size:20px;line-height:1.55;margin:0 0 30px;font-weight:400;">«Наша задача — сделать так, чтобы вы пришли в посольство с правильно оформленными документами.»</p>
+        <div style="position:relative;display:flex;gap:10px;border-top:1px solid rgba(255,255,255,0.1);padding-top:24px;">
+          <div style="flex:1;"><div class="vtk-count" data-target="15" data-suffix="" style="font-family:'Playfair Display',serif;color:#c9a84c;font-size:26px;font-weight:600;">0</div><div style="color:#9aa6b5;font-size:12.5px;margin-top:2px;">лет</div></div>
+          <div style="flex:1;"><div class="vtk-count" data-target="500" data-suffix="+" style="font-family:'Playfair Display',serif;color:#c9a84c;font-size:26px;font-weight:600;">0</div><div style="color:#9aa6b5;font-size:12.5px;margin-top:2px;">клиентов</div></div>
+          <div style="flex:1;"><div class="vtk-count" data-target="30" data-suffix="+" style="font-family:'Playfair Display',serif;color:#c9a84c;font-size:26px;font-weight:600;">0</div><div style="color:#9aa6b5;font-size:12.5px;margin-top:2px;">стран</div></div>
         </div>
       </div>
-      <div class="testi-card fade-up">
-        <span class="testi-quote-mark">"</span>
-        <div class="stars">★★★★★</div>
-        <p class="testi-text">Обращалась по туру в Дубай. Юлия помогла с организацией — перелёт, отель, экскурсии. Всё прошло гладко, буду обращаться снова.</p>
-        <div class="testi-divider"></div>
-        <div class="testi-author">
-          <div class="testi-avatar">👩</div>
-          <div>
-            <div class="testi-name">Светлана И.</div>
-            <div class="testi-dest">Тур, ОАЭ</div>
+      <div data-reveal style="transition-delay:.1s;">
+        <p style="color:#3c4654;font-size:17.5px;line-height:1.7;margin:0 0 32px;font-weight:300;">Visa Travel Kazan — агентство в Казани. Мы работаем с каждым клиентом лично: никаких call-центров и общих инструкций.</p>
+        <div style="display:flex;flex-direction:column;gap:16px;">
+          <div style="display:flex;gap:18px;align-items:flex-start;background:#fffdf8;border:1px solid rgba(15,27,45,0.07);border-radius:14px;padding:22px 24px;">
+            <span style="font-size:26px;line-height:1;flex-shrink:0;">🎯</span>
+            <div><div style="font-weight:600;font-size:16.5px;margin-bottom:5px;">Персонально</div><div style="color:#56616f;font-size:14.5px;line-height:1.55;font-weight:300;">Мы лично ведём каждую заявку.</div></div>
+          </div>
+          <div style="display:flex;gap:18px;align-items:flex-start;background:#fffdf8;border:1px solid rgba(15,27,45,0.07);border-radius:14px;padding:22px 24px;">
+            <span style="font-size:26px;line-height:1;flex-shrink:0;">📋</span>
+            <div><div style="font-weight:600;font-size:16.5px;margin-bottom:5px;">Прозрачно</div><div style="color:#56616f;font-size:14.5px;line-height:1.55;font-weight:300;">Вы знаете, какие документы нужны и почему.</div></div>
+          </div>
+          <div style="display:flex;gap:18px;align-items:flex-start;background:#fffdf8;border:1px solid rgba(15,27,45,0.07);border-radius:14px;padding:22px 24px;">
+            <span style="font-size:26px;line-height:1;flex-shrink:0;">🤝</span>
+            <div><div style="font-weight:600;font-size:16.5px;margin-bottom:5px;">Честно</div><div style="color:#56616f;font-size:14.5px;line-height:1.55;font-weight:300;">Мы не обещаем того, что от нас не зависит.</div></div>
           </div>
         </div>
       </div>
@@ -927,184 +335,236 @@
   </div>
 </section>
 
-<!-- FAQ -->
-<section id="faq">
-  <div class="container">
-    <div class="section-eyebrow" style="text-align:center"><span>Вопросы и ответы</span></div>
-    <h2 class="section-title" style="text-align:center">Часто задаваемые вопросы</h2>
-    <div class="faq-list">
-      <details class="faq-item fade-up">
-        <summary class="faq-q">Гарантируете ли вы получение визы?</summary>
-        <div class="faq-a">
-          <p>Решение о выдаче визы принимает исключительно консульство или посольство страны назначения — ни одна компания в мире не может гарантировать одобрение. Мы гарантируем другое: грамотно подготовленный пакет документов, минимум ошибок в анкете и максимальные шансы на положительный ответ, основанные на 15 годах практики.</p>
+<!-- ====================== REVIEWS ====================== -->
+<section id="reviews" style="padding:96px 28px;background:#efe7d6;">
+  <div style="max-width:1240px;margin:0 auto;">
+    <div data-reveal style="text-align:center;margin-bottom:56px;">
+      <div style="color:#b08f3c;font-size:12.5px;letter-spacing:2px;text-transform:uppercase;font-weight:600;margin-bottom:14px;">Отзывы</div>
+      <h2 style="font-family:'Playfair Display',serif;font-size:clamp(34px,4vw,50px);font-weight:600;margin:0;letter-spacing:-0.5px;">Что говорят клиенты</h2>
+    </div>
+    <div data-resp="reviews-grid" style="display:grid;grid-template-columns:repeat(3,1fr);gap:24px;">
+      <div data-reveal style="background:#fffdf8;border:1px solid rgba(15,27,45,0.07);border-radius:16px;padding:32px 30px;display:flex;flex-direction:column;">
+        <div style="color:#c9a84c;font-size:18px;letter-spacing:3px;margin-bottom:18px;">★★★★★</div>
+        <p style="color:#3c4654;font-size:15.5px;line-height:1.66;margin:0 0 24px;font-weight:300;flex:1;">«Юлия помогла разобраться со всеми документами для шенгенской визы. Объяснила что нужно, как правильно заполнить — всё было подготовлено чётко. Визу получила.»</p>
+        <div style="border-top:1px solid rgba(15,27,45,0.08);padding-top:16px;">
+          <div style="font-weight:600;font-size:15px;">Алина К.</div>
+          <div style="color:#8a93a0;font-size:13px;margin-top:3px;">Шенгенская виза, Италия</div>
         </div>
-      </details>
-      <details class="faq-item fade-up">
-        <summary class="faq-q">Сколько стоит консультация?</summary>
-        <div class="faq-a">
-          <p>Первичная консультация по телефону или в мессенджере — бесплатно. Мы расскажем, какие документы нужны именно вам и во сколько обойдётся полное сопровождение. Оставьте заявку — перезвоним и ответим на все вопросы.</p>
+      </div>
+      <div data-reveal style="background:#fffdf8;border:1px solid rgba(15,27,45,0.07);border-radius:16px;padding:32px 30px;display:flex;flex-direction:column;">
+        <div style="color:#c9a84c;font-size:18px;letter-spacing:3px;margin-bottom:18px;">★★★★★</div>
+        <p style="color:#3c4654;font-size:15.5px;line-height:1.66;margin:0 0 24px;font-weight:300;flex:1;">«Помогла с подготовкой документов для визы в США — анкета, подготовка к интервью, список бумаг. Всё оказалось гораздо понятнее, чем я думал.»</p>
+        <div style="border-top:1px solid rgba(15,27,45,0.08);padding-top:16px;">
+          <div style="font-weight:600;font-size:15px;">Марат Р.</div>
+          <div style="color:#8a93a0;font-size:13px;margin-top:3px;">Виза США B1/B2</div>
         </div>
-      </details>
-      <details class="faq-item fade-up">
-        <summary class="faq-q">Как долго оформляется виза?</summary>
-        <div class="faq-a">
-          <p>Сроки зависят от страны и типа визы. Шенгенские — обычно 5–15 рабочих дней. США — 30–90 дней (включая ожидание интервью). Великобритания — 15–30 рабочих дней. Мы поможем рассчитать сроки под вашу дату поездки и при необходимости организуем срочное рассмотрение.</p>
+      </div>
+      <div data-reveal style="background:#fffdf8;border:1px solid rgba(15,27,45,0.07);border-radius:16px;padding:32px 30px;display:flex;flex-direction:column;">
+        <div style="color:#c9a84c;font-size:18px;letter-spacing:3px;margin-bottom:18px;">★★★★★</div>
+        <p style="color:#3c4654;font-size:15.5px;line-height:1.66;margin:0 0 24px;font-weight:300;flex:1;">«Обращалась по туру в Дубай. Юлия помогла с организацией — перелёт, отель, экскурсии. Всё прошло гладко, буду обращаться снова.»</p>
+        <div style="border-top:1px solid rgba(15,27,45,0.08);padding-top:16px;">
+          <div style="font-weight:600;font-size:15px;">Светлана И.</div>
+          <div style="color:#8a93a0;font-size:13px;margin-top:3px;">Тур, ОАЭ</div>
         </div>
-      </details>
-      <details class="faq-item fade-up">
-        <summary class="faq-q">Что будет, если в визе откажут?</summary>
-        <div class="faq-a">
-          <p>Мы разберём причину отказа и разработаем стратегию для повторной подачи: устраним слабые места в документах, подберём оптимальный момент для новой попытки. Многие наши клиенты успешно получали визу со второго раза после совместного анализа ситуации.</p>
-        </div>
-      </details>
-      <details class="faq-item fade-up">
-        <summary class="faq-q">Можно ли обратиться за срочной помощью?</summary>
-        <div class="faq-a">
-          <p>Да. Если поездка через несколько недель или уже куплены билеты — позвоните или напишите в WhatsApp прямо сейчас. Мы оценим ситуацию и предложим наиболее быстрый вариант: запись в приоритетную очередь, помощь с Appointment в нужное консульство и ускоренный сбор документов.</p>
-        </div>
-      </details>
-      <details class="faq-item fade-up">
-        <summary class="faq-q">Нужно ли приходить лично?</summary>
-        <div class="faq-a">
-          <p>На консультацию и для передачи оригиналов документов — да, желательно приехать в офис на ул. Абсалямова, 19. Многое можно сделать дистанционно: проверка анкеты, заполнение форм, онлайн-оплата сборов. Личная явка в консульство для биометрии зависит от конкретной страны — уточним при разговоре.</p>
-        </div>
-      </details>
+      </div>
     </div>
   </div>
 </section>
 
-<!-- CONTACT -->
-<section id="contact">
-  <div class="container">
-    <div class="contact-grid">
-      <div class="contact-info fade-up">
-        <div class="section-eyebrow"><span>Контакты</span></div>
-        <div class="contact-info-head">
-          <h3>Свяжитесь с нами</h3>
-          <p>Напишите или позвоните — расскажите, куда планируете ехать, и мы объясним, чем сможем помочь.</p>
-        </div>
-        <div class="contact-list">
-          <div class="contact-row">
-            <div class="contact-row-icon">📞</div>
-            <div>
-              <div class="contact-row-label">Телефон</div>
-              <a href="tel:+79872960512" class="contact-row-val">+7 (987) 296-05-12</a>
-            </div>
-          </div>
-          <div class="contact-row">
-            <div class="contact-row-icon">📍</div>
-            <div>
-              <div class="contact-row-label">Адрес</div>
-              <span class="contact-row-val">ул. Абсалямова, 19, Казань</span>
-            </div>
-          </div>
-          <div class="contact-row">
-            <div class="contact-row-icon">🕐</div>
-            <div>
-              <div class="contact-row-label">Режим работы</div>
-              <span class="contact-row-val">Пн–Пт 9:00–19:00, Сб 10:00–16:00</span>
-            </div>
-          </div>
-        </div>
-        <div class="contact-cta-row">
-          <a href="tel:+79872960512" class="call-btn">📞 Позвонить</a>
-          <a href="https://wa.me/79872960512" target="_blank" class="wa-btn">💬 WhatsApp</a>
+<!-- ====================== FAQ ====================== -->
+<section style="padding:96px 28px;background:#f6f1e7;">
+  <div style="max-width:840px;margin:0 auto;">
+    <div data-reveal style="text-align:center;margin-bottom:48px;">
+      <h2 style="font-family:'Playfair Display',serif;font-size:clamp(32px,3.8vw,46px);font-weight:600;margin:0;letter-spacing:-0.5px;">Часто задаваемые вопросы</h2>
+    </div>
+    <div data-reveal style="display:flex;flex-direction:column;gap:12px;" id="faq-list">
+      <div class="faq-item" style="background:#fffdf8;border:1px solid rgba(15,27,45,0.08);border-radius:13px;overflow:hidden;">
+        <button class="faq-btn" style="width:100%;background:transparent;border:none;cursor:pointer;display:flex;align-items:center;justify-content:space-between;gap:18px;padding:22px 26px;text-align:left;">
+          <span style="font-size:16.5px;font-weight:600;color:#0f1b2d;">Гарантируете ли вы получение визы?</span>
+          <span class="faq-sign" style="flex-shrink:0;width:30px;height:30px;border-radius:50%;border:1px solid rgba(201,168,76,0.5);color:#b08f3c;display:flex;align-items:center;justify-content:center;font-size:20px;font-weight:400;line-height:1;">+</span>
+        </button>
+        <div class="faq-body" style="display:none;padding:0 26px 24px;">
+          <p style="color:#56616f;font-size:15px;line-height:1.66;margin:0;font-weight:300;">Решение принимает консульство. Мы гарантируем грамотно подготовленный пакет, минимум ошибок и максимальные шансы на одобрение, основанные на 15 годах практики.</p>
         </div>
       </div>
-      <div class="contact-form fade-up">
-        <div class="form-head">Оставить заявку</div>
-        <form id="contactForm" onsubmit="handleSubmit(event)">
-          <div class="form-row">
-            <div class="form-group">
-              <label>Ваше имя</label>
-              <input type="text" id="f-name" placeholder="Анна" required />
-            </div>
-            <div class="form-group">
-              <label>Телефон</label>
-              <input type="tel" id="f-phone" placeholder="+7 900 000 00 00" required />
-            </div>
+      <div class="faq-item" style="background:#fffdf8;border:1px solid rgba(15,27,45,0.08);border-radius:13px;overflow:hidden;">
+        <button class="faq-btn" style="width:100%;background:transparent;border:none;cursor:pointer;display:flex;align-items:center;justify-content:space-between;gap:18px;padding:22px 26px;text-align:left;">
+          <span style="font-size:16.5px;font-weight:600;color:#0f1b2d;">Сколько стоит консультация?</span>
+          <span class="faq-sign" style="flex-shrink:0;width:30px;height:30px;border-radius:50%;border:1px solid rgba(201,168,76,0.5);color:#b08f3c;display:flex;align-items:center;justify-content:center;font-size:20px;font-weight:400;line-height:1;">+</span>
+        </button>
+        <div class="faq-body" style="display:none;padding:0 26px 24px;">
+          <p style="color:#56616f;font-size:15px;line-height:1.66;margin:0;font-weight:300;">Первичная — бесплатно. Расскажем что нужно и во сколько обойдётся сопровождение. Оставьте заявку — перезвоним и ответим на все вопросы.</p>
+        </div>
+      </div>
+      <div class="faq-item" style="background:#fffdf8;border:1px solid rgba(15,27,45,0.08);border-radius:13px;overflow:hidden;">
+        <button class="faq-btn" style="width:100%;background:transparent;border:none;cursor:pointer;display:flex;align-items:center;justify-content:space-between;gap:18px;padding:22px 26px;text-align:left;">
+          <span style="font-size:16.5px;font-weight:600;color:#0f1b2d;">Как долго оформляется виза?</span>
+          <span class="faq-sign" style="flex-shrink:0;width:30px;height:30px;border-radius:50%;border:1px solid rgba(201,168,76,0.5);color:#b08f3c;display:flex;align-items:center;justify-content:center;font-size:20px;font-weight:400;line-height:1;">+</span>
+        </button>
+        <div class="faq-body" style="display:none;padding:0 26px 24px;">
+          <p style="color:#56616f;font-size:15px;line-height:1.66;margin:0;font-weight:300;">Шенгенские — 5–15 дней. США — 30–90 дней (включая ожидание интервью). Великобритания — 15–30 рабочих дней. Мы поможем рассчитать сроки под вашу дату поездки.</p>
+        </div>
+      </div>
+      <div class="faq-item" style="background:#fffdf8;border:1px solid rgba(15,27,45,0.08);border-radius:13px;overflow:hidden;">
+        <button class="faq-btn" style="width:100%;background:transparent;border:none;cursor:pointer;display:flex;align-items:center;justify-content:space-between;gap:18px;padding:22px 26px;text-align:left;">
+          <span style="font-size:16.5px;font-weight:600;color:#0f1b2d;">Что будет, если в визе откажут?</span>
+          <span class="faq-sign" style="flex-shrink:0;width:30px;height:30px;border-radius:50%;border:1px solid rgba(201,168,76,0.5);color:#b08f3c;display:flex;align-items:center;justify-content:center;font-size:20px;font-weight:400;line-height:1;">+</span>
+        </button>
+        <div class="faq-body" style="display:none;padding:0 26px 24px;">
+          <p style="color:#56616f;font-size:15px;line-height:1.66;margin:0;font-weight:300;">Разберём причину и разработаем стратегию повторной подачи. Многие клиенты успешно получали визу со второго раза после совместного анализа ситуации.</p>
+        </div>
+      </div>
+      <div class="faq-item" style="background:#fffdf8;border:1px solid rgba(15,27,45,0.08);border-radius:13px;overflow:hidden;">
+        <button class="faq-btn" style="width:100%;background:transparent;border:none;cursor:pointer;display:flex;align-items:center;justify-content:space-between;gap:18px;padding:22px 26px;text-align:left;">
+          <span style="font-size:16.5px;font-weight:600;color:#0f1b2d;">Можно ли обратиться за срочной помощью?</span>
+          <span class="faq-sign" style="flex-shrink:0;width:30px;height:30px;border-radius:50%;border:1px solid rgba(201,168,76,0.5);color:#b08f3c;display:flex;align-items:center;justify-content:center;font-size:20px;font-weight:400;line-height:1;">+</span>
+        </button>
+        <div class="faq-body" style="display:none;padding:0 26px 24px;">
+          <p style="color:#56616f;font-size:15px;line-height:1.66;margin:0;font-weight:300;">Да, звоните или пишите в WhatsApp прямо сейчас — оценим ситуацию и предложим наиболее быстрый вариант.</p>
+        </div>
+      </div>
+      <div class="faq-item" style="background:#fffdf8;border:1px solid rgba(15,27,45,0.08);border-radius:13px;overflow:hidden;">
+        <button class="faq-btn" style="width:100%;background:transparent;border:none;cursor:pointer;display:flex;align-items:center;justify-content:space-between;gap:18px;padding:22px 26px;text-align:left;">
+          <span style="font-size:16.5px;font-weight:600;color:#0f1b2d;">Нужно ли приходить лично?</span>
+          <span class="faq-sign" style="flex-shrink:0;width:30px;height:30px;border-radius:50%;border:1px solid rgba(201,168,76,0.5);color:#b08f3c;display:flex;align-items:center;justify-content:center;font-size:20px;font-weight:400;line-height:1;">+</span>
+        </button>
+        <div class="faq-body" style="display:none;padding:0 26px 24px;">
+          <p style="color:#56616f;font-size:15px;line-height:1.66;margin:0;font-weight:300;">На консультацию желательно, многое можно дистанционно. Личная явка в консульство для биометрии зависит от страны — уточним при разговоре.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ====================== CONTACTS ====================== -->
+<section id="contacts" style="padding:96px 28px;background:#0f1b2d;">
+  <div style="max-width:1240px;margin:0 auto;">
+    <div data-resp="contacts-grid" style="display:grid;grid-template-columns:0.85fr 1.15fr;gap:48px;align-items:start;">
+      <div data-reveal>
+        <div style="color:#c9a84c;font-size:12.5px;letter-spacing:2px;text-transform:uppercase;font-weight:600;margin-bottom:14px;">Контакты</div>
+        <h2 style="font-family:'Playfair Display',serif;font-size:clamp(30px,3.4vw,44px);font-weight:600;margin:0 0 34px;color:#f6f1e7;letter-spacing:-0.5px;">Свяжитесь с нами</h2>
+        <div style="display:flex;flex-direction:column;gap:24px;margin-bottom:34px;">
+          <div>
+            <div style="color:#6f7a8a;font-size:12px;text-transform:uppercase;letter-spacing:1.2px;margin-bottom:6px;">Телефон</div>
+            <a href="tel:+79872960512" class="vtk-contact-phone" style="color:#f6f1e7;font-size:20px;font-family:'Playfair Display',serif;text-decoration:none;">+7 (987) 296-05-12</a>
           </div>
-          <div class="form-group">
-            <label>Нужная виза / страна</label>
-            <select id="f-visa" required>
-              <option value="">Выберите...</option>
-              <option>Шенгенская виза (Европа)</option>
+          <div>
+            <div style="color:#6f7a8a;font-size:12px;text-transform:uppercase;letter-spacing:1.2px;margin-bottom:6px;">Адрес</div>
+            <div style="color:#cdd4de;font-size:16px;">ул. Абсалямова, 19, Казань</div>
+          </div>
+          <div>
+            <div style="color:#6f7a8a;font-size:12px;text-transform:uppercase;letter-spacing:1.2px;margin-bottom:6px;">Часы работы</div>
+            <div style="color:#cdd4de;font-size:16px;">Пн–Пт 9:00–19:00 · Сб 10:00–16:00</div>
+          </div>
+        </div>
+        <div style="display:flex;flex-wrap:wrap;gap:12px;">
+          <a href="tel:+79872960512" class="vtk-btn-call" style="text-decoration:none;display:inline-flex;align-items:center;gap:9px;background:rgba(201,168,76,0.14);border:1px solid rgba(201,168,76,0.4);color:#f6f1e7;font-size:14.5px;font-weight:500;padding:12px 20px;border-radius:9px;">📞 Позвонить</a>
+          <a href="https://wa.me/79872960512" target="_blank" rel="noopener" class="vtk-btn-wa-sm" style="text-decoration:none;display:inline-flex;align-items:center;gap:9px;background:#25925a;color:#fff;font-size:14.5px;font-weight:500;padding:12px 20px;border-radius:9px;">💬 WhatsApp</a>
+        </div>
+      </div>
+      <div data-reveal style="transition-delay:.1s;background:#fffdf8;border-radius:20px;padding:38px 36px;">
+        <!-- FORM IDLE -->
+        <form id="contact-form" style="display:flex;flex-direction:column;gap:18px;">
+          <div>
+            <label style="display:block;font-size:13px;font-weight:600;color:#3c4654;margin-bottom:7px;">Имя</label>
+            <input type="text" id="f-name" placeholder="Ваше имя" required style="width:100%;padding:13px 15px;border:1px solid rgba(15,27,45,0.16);border-radius:9px;font-size:15px;font-family:'Inter',sans-serif;background:#fff;color:#0f1b2d;transition:border-color .2s;">
+          </div>
+          <div>
+            <label style="display:block;font-size:13px;font-weight:600;color:#3c4654;margin-bottom:7px;">Телефон</label>
+            <input type="tel" id="f-phone" placeholder="+7 (___) ___-__-__" required style="width:100%;padding:13px 15px;border:1px solid rgba(15,27,45,0.16);border-radius:9px;font-size:15px;font-family:'Inter',sans-serif;background:#fff;color:#0f1b2d;transition:border-color .2s;">
+          </div>
+          <div>
+            <label style="display:block;font-size:13px;font-weight:600;color:#3c4654;margin-bottom:7px;">Виза / страна</label>
+            <select id="f-visa" style="width:100%;padding:13px 15px;border:1px solid rgba(15,27,45,0.16);border-radius:9px;font-size:15px;font-family:'Inter',sans-serif;background:#fff;color:#0f1b2d;transition:border-color .2s;">
+              <option>Шенгенская виза</option>
               <option>Виза США</option>
               <option>Виза в Великобританию</option>
-              <option>Азиатские визы (Япония, Китай, Таиланд...)</option>
+              <option>Азиатские визы</option>
               <option>Тур под ключ</option>
               <option>Срочная консультация</option>
               <option>Другое</option>
             </select>
           </div>
-          <div class="form-group">
-            <label>Комментарий (необязательно)</label>
-            <textarea id="f-comment" placeholder="Расскажите о датах поездки или особых обстоятельствах..."></textarea>
+          <div>
+            <label style="display:block;font-size:13px;font-weight:600;color:#3c4654;margin-bottom:7px;">Комментарий</label>
+            <textarea id="f-comment" rows="3" placeholder="Кратко опишите вашу ситуацию" style="width:100%;padding:13px 15px;border:1px solid rgba(15,27,45,0.16);border-radius:9px;font-size:15px;font-family:'Inter',sans-serif;background:#fff;color:#0f1b2d;resize:vertical;transition:border-color .2s;"></textarea>
           </div>
-          <p class="form-disclaimer">
-            Оставляя заявку, вы соглашаетесь на обработку персональных данных.
-            Мы помогаем в подготовке документов — решение о выдаче визы принимается консульством.
-          </p>
-          <button type="submit" class="btn-submit" id="submitBtn">Отправить заявку</button>
-          <div class="form-status" id="formStatus"></div>
+          <button type="submit" id="f-submit" class="vtk-btn-submit" style="margin-top:4px;background:#c9a84c;color:#0f1b2d;border:none;font-size:15.5px;font-weight:600;padding:15px;border-radius:10px;cursor:pointer;font-family:'Inter',sans-serif;display:flex;align-items:center;justify-content:center;gap:10px;box-shadow:0 6px 18px rgba(201,168,76,0.3);">
+            <span id="f-spinner" style="display:none;width:16px;height:16px;border:2px solid rgba(15,27,45,0.3);border-top-color:#0f1b2d;border-radius:50%;animation:vtk-spin .7s linear infinite;"></span>
+            <span id="f-label">Отправить заявку</span>
+          </button>
+          <p style="color:#8a93a0;font-size:12px;line-height:1.5;margin:2px 0 0;text-align:center;">Нажимая кнопку, вы соглашаетесь на обработку персональных данных.</p>
         </form>
+        <!-- FORM SUCCESS -->
+        <div id="form-success" style="display:none;text-align:center;padding:36px 12px;">
+          <div style="width:66px;height:66px;border-radius:50%;background:rgba(37,146,90,0.12);display:flex;align-items:center;justify-content:center;font-size:32px;margin:0 auto 22px;">✓</div>
+          <h3 style="font-family:'Playfair Display',serif;font-size:26px;font-weight:600;margin:0 0 12px;">Заявка отправлена</h3>
+          <p style="color:#56616f;font-size:16px;line-height:1.6;margin:0;">Мы получили вашу заявку и свяжемся с вами в ближайшее время.</p>
+        </div>
+        <!-- FORM ERROR -->
+        <div id="form-error" style="display:none;text-align:center;padding:36px 12px;">
+          <div style="width:66px;height:66px;border-radius:50%;background:rgba(190,60,60,0.1);display:flex;align-items:center;justify-content:center;font-size:32px;margin:0 auto 22px;">⚠️</div>
+          <h3 style="font-family:'Playfair Display',serif;font-size:24px;font-weight:600;margin:0 0 12px;">Не удалось отправить</h3>
+          <p style="color:#56616f;font-size:16px;line-height:1.6;margin:0 0 22px;">Позвоните нам: <a href="tel:+79872960512" style="color:#b08f3c;font-weight:600;text-decoration:none;">+7 (987) 296-05-12</a></p>
+          <button id="f-retry" style="background:transparent;border:1px solid rgba(15,27,45,0.2);color:#0f1b2d;font-size:14.5px;font-weight:500;padding:11px 24px;border-radius:9px;cursor:pointer;font-family:'Inter',sans-serif;">Попробовать снова</button>
+        </div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- MAP -->
+<!-- ====================== MAP ====================== -->
 <div id="map-section">
   <div class="map-bar">
-    <div class="map-bar-left"><strong>Адрес:</strong> ул. Абсалямова, 19, Казань</div>
-    <a href="https://yandex.ru/maps/?text=Казань%2C+улица+Абсалямова%2C+19" target="_blank" class="map-link">
-      Открыть на Яндекс Картах →
-    </a>
+    <div><strong>Адрес:</strong> ул. Абсалямова, 19, Казань</div>
+    <a href="https://yandex.ru/maps/?text=Казань%2C+улица+Абсалямова%2C+19" target="_blank" rel="noopener">Открыть на Яндекс Картах →</a>
   </div>
-  <div class="map-iframe-wrap">
-    <iframe
-      src="https://yandex.ru/map-widget/v1/?text=Казань%2C+улица+Абсалямова%2C+19&lang=ru_RU&z=16"
-      allowfullscreen loading="lazy">
-    </iframe>
-  </div>
+  <iframe src="https://yandex.ru/map-widget/v1/?text=Казань%2C+улица+Абсалямова%2C+19&lang=ru_RU&z=16" allowfullscreen loading="lazy"></iframe>
 </div>
 
-<!-- FOOTER -->
-<footer>
-  <div class="footer-grid">
-    <div>
-      <div class="footer-brand-name">Visa <span>Travel</span> Kazan</div>
-      <p class="footer-disclaimer">
-        Мы оказываем помощь в подготовке документов для визовой заявки.
-        Решение о выдаче визы принимается исключительно консульством или посольством
-        страны назначения. Visa Travel Kazan не несёт ответственности за отказ в выдаче визы.
-      </p>
+<!-- ====================== FOOTER ====================== -->
+<footer style="background:#0c1626;padding:60px 28px 32px;border-top:1px solid rgba(201,168,76,0.14);">
+  <div style="max-width:1240px;margin:0 auto;">
+    <div data-resp="footer-grid" style="display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:40px;padding-bottom:40px;border-bottom:1px solid rgba(255,255,255,0.07);">
+      <div>
+        <div style="display:flex;align-items:center;gap:12px;margin-bottom:16px;">
+          <span style="width:38px;height:38px;border:1.5px solid rgba(201,168,76,0.6);border-radius:10px;display:flex;align-items:center;justify-content:center;flex-shrink:0;background:rgba(201,168,76,0.08);">
+            <svg width="21" height="21" viewBox="0 0 24 24" fill="#c9a84c" style="display:block;transform:translateY(-0.5px);"><path d="M17.8 19.2 16 11l3.5-3.5C21 6 21.5 4 21 3c-1-.5-3 0-4.5 1.5L13 8 4.8 6.2c-.5-.1-.9.1-1.1.5l-.3.5c-.2.5-.1 1 .3 1.3L9 12l-2 3H4l-1 1 3 2 2 3 1-1v-3l3-2 3.5 5.3c.3.4.8.5 1.3.3l.5-.2c.4-.3.6-.7.5-1.2z"/></svg>
+          </span>
+          <span style="font-family:'Playfair Display',serif;font-size:22px;font-weight:600;color:#f6f1e7;">Visa Travel <span style="color:#c9a84c;">Kazan</span></span>
+        </div>
+        <p style="color:#7e899a;font-size:13.5px;line-height:1.65;margin:0;max-width:340px;font-weight:300;">Мы оказываем помощь в подготовке документов. Решение о выдаче визы принимается исключительно консульством.</p>
+      </div>
+      <div>
+        <div style="color:#c9a84c;font-size:12.5px;letter-spacing:1.4px;text-transform:uppercase;font-weight:600;margin-bottom:18px;">Навигация</div>
+        <div style="display:flex;flex-direction:column;gap:11px;">
+          <a href="#services" class="vtk-footer-link" style="color:#9aa6b5;font-size:14px;text-decoration:none;">Услуги</a>
+          <a href="#process" class="vtk-footer-link" style="color:#9aa6b5;font-size:14px;text-decoration:none;">Процесс</a>
+          <a href="#about" class="vtk-footer-link" style="color:#9aa6b5;font-size:14px;text-decoration:none;">О нас</a>
+          <a href="#reviews" class="vtk-footer-link" style="color:#9aa6b5;font-size:14px;text-decoration:none;">Отзывы</a>
+          <a href="#contacts" class="vtk-footer-link" style="color:#9aa6b5;font-size:14px;text-decoration:none;">Контакты</a>
+        </div>
+      </div>
+      <div>
+        <div style="color:#c9a84c;font-size:12.5px;letter-spacing:1.4px;text-transform:uppercase;font-weight:600;margin-bottom:18px;">Контакты</div>
+        <div style="display:flex;flex-direction:column;gap:11px;">
+          <a href="tel:+79872960512" class="vtk-footer-link" style="color:#9aa6b5;font-size:14px;text-decoration:none;">+7 (987) 296-05-12</a>
+          <a href="https://wa.me/79872960512" target="_blank" rel="noopener" class="vtk-footer-link" style="color:#9aa6b5;font-size:14px;text-decoration:none;">WhatsApp</a>
+          <span style="color:#9aa6b5;font-size:14px;">ул. Абсалямова, 19, Казань</span>
+        </div>
+      </div>
     </div>
-    <div>
-      <div class="footer-col-title">Навигация</div>
-      <ul class="footer-links-list">
-        <li><a href="#services">Услуги</a></li>
-        <li><a href="#how">Как мы работаем</a></li>
-        <li><a href="#about">О нас</a></li>
-        <li><a href="#testimonials">Отзывы</a></li>
-        <li><a href="#contact">Контакты</a></li>
-      </ul>
-    </div>
-    <div>
-      <div class="footer-col-title">Контакты</div>
-      <ul class="footer-links-list">
-        <li><a href="tel:+79872960512">+7 (987) 296-05-12</a></li>
-        <li><a href="https://wa.me/79872960512" target="_blank">WhatsApp</a></li>
-        <li><a href="#">ул. Абсалямова, 19</a></li>
-        <li><a href="#">Казань</a></li>
-      </ul>
-    </div>
+    <div style="padding-top:24px;color:#5f6a7a;font-size:13px;">© 2025 Visa Travel Kazan · <a href="tel:+79872960512" style="color:#5f6a7a;text-decoration:none;">+7 (987) 296-05-12</a></div>
   </div>
-  <p class="footer-copy">© 2025 Visa Travel Kazan · <a href="tel:+79872960512">+7 (987) 296-05-12</a></p>
 </footer>
 
-<a href="https://wa.me/79872960512" target="_blank" class="wa-float" title="WhatsApp">💬</a>
+<!-- ====================== FLOATING WHATSAPP ====================== -->
+<span aria-hidden="true" style="position:fixed;bottom:26px;right:26px;z-index:299;width:58px;height:58px;border-radius:50%;background:#25925a;pointer-events:none;animation:vtk-pulse 2.6s ease-out infinite;"></span>
+<a href="https://wa.me/79872960512" target="_blank" rel="noopener" aria-label="WhatsApp" class="vtk-wa-float" style="position:fixed;bottom:26px;right:26px;z-index:300;width:58px;height:58px;border-radius:50%;background:#25925a;display:flex;align-items:center;justify-content:center;font-size:28px;text-decoration:none;box-shadow:0 8px 26px rgba(37,146,90,0.5);">💬</a>
 
+</div>
+
+<!-- ====================== JSON-LD ====================== -->
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -1120,144 +580,145 @@
     "addressCountry": "RU"
   },
   "openingHoursSpecification": [
-    {
-      "@type": "OpeningHoursSpecification",
-      "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"],
-      "opens": "09:00",
-      "closes": "19:00"
-    },
-    {
-      "@type": "OpeningHoursSpecification",
-      "dayOfWeek": ["Saturday"],
-      "opens": "10:00",
-      "closes": "16:00"
-    }
+    {"@type": "OpeningHoursSpecification","dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"],"opens": "09:00","closes": "19:00"},
+    {"@type": "OpeningHoursSpecification","dayOfWeek": ["Saturday"],"opens": "10:00","closes": "16:00"}
   ]
 }
 </script>
-
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@type": "FAQPage",
   "mainEntity": [
-    {
-      "@type": "Question",
-      "name": "Гарантируете ли вы получение визы?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Решение о выдаче визы принимает исключительно консульство или посольство страны назначения. Мы гарантируем грамотно подготовленный пакет документов и максимальные шансы на положительный ответ, основанные на 15 годах практики."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Сколько стоит консультация?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Первичная консультация по телефону или в мессенджере — бесплатно. Оставьте заявку, и мы расскажем, какие документы нужны именно вам и во сколько обойдётся полное сопровождение."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Как долго оформляется виза?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Сроки зависят от страны. Шенгенские — 5–15 рабочих дней. США — 30–90 дней. Великобритания — 15–30 рабочих дней. Мы поможем рассчитать сроки под вашу дату поездки."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Что будет, если в визе откажут?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Мы разберём причину отказа и разработаем стратегию для повторной подачи: устраним слабые места в документах и подберём оптимальный момент для новой попытки."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Можно ли обратиться за срочной помощью?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Да. Если поездка через несколько недель — позвоните или напишите в WhatsApp прямо сейчас. Мы оценим ситуацию и предложим наиболее быстрый вариант оформления."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Нужно ли приходить лично?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "На консультацию и для передачи оригиналов — желательно в офис на ул. Абсалямова, 19. Многое можно сделать дистанционно: проверка анкеты, заполнение форм, онлайн-оплата сборов."
-      }
-    }
+    {"@type": "Question","name": "Гарантируете ли вы получение визы?","acceptedAnswer": {"@type": "Answer","text": "Решение о выдаче визы принимает исключительно консульство. Мы гарантируем грамотно подготовленный пакет документов и максимальные шансы на положительный ответ, основанные на 15 годах практики."}},
+    {"@type": "Question","name": "Сколько стоит консультация?","acceptedAnswer": {"@type": "Answer","text": "Первичная консультация — бесплатно. Расскажем что нужно и во сколько обойдётся полное сопровождение."}},
+    {"@type": "Question","name": "Как долго оформляется виза?","acceptedAnswer": {"@type": "Answer","text": "Шенгенские — 5–15 дней. США — 30–90 дней. Великобритания — 15–30 рабочих дней."}},
+    {"@type": "Question","name": "Что будет, если в визе откажут?","acceptedAnswer": {"@type": "Answer","text": "Разберём причину и разработаем стратегию повторной подачи."}},
+    {"@type": "Question","name": "Можно ли обратиться за срочной помощью?","acceptedAnswer": {"@type": "Answer","text": "Да, звоните или пишите в WhatsApp — оценим ситуацию сразу."}},
+    {"@type": "Question","name": "Нужно ли приходить лично?","acceptedAnswer": {"@type": "Answer","text": "На консультацию желательно, многое можно дистанционно."}}
   ]
 }
 </script>
 
 <script>
-  // ─── BACKEND URL (update after Render deploy) ──────────────
-  const BACKEND = 'https://visatravel-api.onrender.com'; // Render backend
+(function() {
+  const BACKEND = 'https://visatravel-api.onrender.com';
 
-  // ─── FORM HANDLER ─────────────────────────────────────────
-  async function handleSubmit(e) {
-    e.preventDefault();
-    const btn     = document.getElementById('submitBtn');
-    const status  = document.getElementById('formStatus');
-    const name    = document.getElementById('f-name').value.trim();
-    const phone   = document.getElementById('f-phone').value.trim();
-    const visa    = document.getElementById('f-visa').value;
-    const comment = document.getElementById('f-comment').value.trim();
-
-    btn.disabled = true;
-    btn.textContent = 'Отправляем...';
-    status.style.display = 'none';
-    status.className = 'form-status';
-
-    try {
-      const res = await fetch(`${BACKEND}/submit`, {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ name, phone, visa, comment }),
-      });
-      if (!res.ok) throw new Error(res.status);
-      btn.textContent = '✓ Заявка отправлена';
-      status.textContent = 'Мы получили вашу заявку и свяжемся с вами в ближайшее время.';
-      status.className = 'form-status success';
-      status.style.display = 'block';
-      e.target.reset();
-    } catch (err) {
-      console.error(err);
-      btn.disabled = false;
-      btn.textContent = 'Отправить заявку';
-      status.textContent = 'Не удалось отправить заявку. Пожалуйста, позвоните нам: +7 (987) 296-05-12';
-      status.className = 'form-status error';
-      status.style.display = 'block';
-    }
+  // ── Progress bar ──
+  const bar = document.getElementById('vtk-progress');
+  function updateProgress() {
+    const sc = document.documentElement;
+    const max = sc.scrollHeight - sc.clientHeight || 1;
+    bar.style.width = (Math.min(sc.scrollTop / max, 1) * 100) + '%';
   }
+  window.addEventListener('scroll', updateProgress, { passive: true });
 
-  // ─── HAMBURGER NAV ────────────────────────────────────────
-  const burger   = document.getElementById('navBurger');
-  const navLinks = document.querySelector('.nav-links');
-  burger.addEventListener('click', () => {
-    burger.classList.toggle('open');
-    navLinks.classList.toggle('open');
-  });
-  navLinks.querySelectorAll('a').forEach(a =>
-    a.addEventListener('click', () => {
-      burger.classList.remove('open');
-      navLinks.classList.remove('open');
-    })
-  );
-
-  // ─── FADE UP ──────────────────────────────────────────────
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach((entry, i) => {
-      if (entry.isIntersecting) {
-        setTimeout(() => entry.target.classList.add('visible'), i * 60);
-        observer.unobserve(entry.target);
+  // ── Reveal on scroll ──
+  function check() {
+    const vh = window.innerHeight;
+    document.querySelectorAll('[data-reveal],[data-reveal-blur],[data-reveal-blur-d2]').forEach(el => {
+      if (el.classList.contains('vtk-visible')) return;
+      const r = el.getBoundingClientRect();
+      if (r.top < vh * 0.92 && r.bottom > -60) el.classList.add('vtk-visible');
+    });
+    // counters
+    document.querySelectorAll('.vtk-count:not([data-counted])').forEach(el => {
+      const r = el.getBoundingClientRect();
+      if (r.top < vh * 0.9 && r.bottom > 0) {
+        el.dataset.counted = '1';
+        countUp(el);
       }
     });
-  }, { threshold: 0.08 });
-  document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+  }
+  function countUp(el) {
+    const target = parseFloat(el.dataset.target);
+    const suffix = el.dataset.suffix || '';
+    const dur = 1600;
+    const t0 = performance.now();
+    (function step(now) {
+      const p = Math.min((now - t0) / dur, 1);
+      const e = 1 - Math.pow(1 - p, 3);
+      el.textContent = Math.round(target * e) + suffix;
+      if (p < 1) requestAnimationFrame(step);
+    })(t0);
+  }
+  window.addEventListener('scroll', check, { passive: true });
+  window.addEventListener('resize', check);
+  check();
+  requestAnimationFrame(check);
+  setTimeout(check, 250);
+  setTimeout(check, 700);
+
+  // ── Mobile nav ──
+  const burger = document.getElementById('nav-burger');
+  const mobileMenu = document.getElementById('nav-mobile-menu');
+  burger.addEventListener('click', () => {
+    const open = mobileMenu.style.display === 'flex';
+    mobileMenu.style.display = open ? 'none' : 'flex';
+  });
+  document.querySelectorAll('.vtk-close-menu').forEach(a => {
+    a.addEventListener('click', () => { mobileMenu.style.display = 'none'; });
+  });
+  document.getElementById('nav-logo-link').addEventListener('click', () => {
+    mobileMenu.style.display = 'none';
+  });
+
+  // ── FAQ accordion ──
+  document.querySelectorAll('.faq-item').forEach(item => {
+    const btn = item.querySelector('.faq-btn');
+    const body = item.querySelector('.faq-body');
+    const sign = item.querySelector('.faq-sign');
+    btn.addEventListener('click', () => {
+      const open = body.style.display === 'block';
+      // close all
+      document.querySelectorAll('.faq-body').forEach(b => { b.style.display = 'none'; });
+      document.querySelectorAll('.faq-sign').forEach(s => { s.textContent = '+'; });
+      if (!open) { body.style.display = 'block'; sign.textContent = '−'; }
+    });
+  });
+
+  // ── Form submission ──
+  const form = document.getElementById('contact-form');
+  const successEl = document.getElementById('form-success');
+  const errorEl = document.getElementById('form-error');
+  const submitBtn = document.getElementById('f-submit');
+  const spinner = document.getElementById('f-spinner');
+  const label = document.getElementById('f-label');
+  const retryBtn = document.getElementById('f-retry');
+
+  form.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    submitBtn.disabled = true;
+    spinner.style.display = 'inline-block';
+    label.textContent = 'Отправляем…';
+    try {
+      const res = await fetch(BACKEND + '/submit', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          name: document.getElementById('f-name').value.trim(),
+          phone: document.getElementById('f-phone').value.trim(),
+          visa: document.getElementById('f-visa').value,
+          comment: document.getElementById('f-comment').value.trim()
+        })
+      });
+      if (!res.ok) throw new Error('bad');
+      form.style.display = 'none';
+      successEl.style.display = 'block';
+    } catch {
+      form.style.display = 'none';
+      errorEl.style.display = 'block';
+    }
+  });
+
+  retryBtn.addEventListener('click', () => {
+    errorEl.style.display = 'none';
+    form.style.display = 'flex';
+    submitBtn.disabled = false;
+    spinner.style.display = 'none';
+    label.textContent = 'Отправить заявку';
+  });
+})();
 </script>
 </body>
 </html>
