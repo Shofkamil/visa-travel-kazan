@@ -1,6 +1,7 @@
 import asyncio
 import hmac
 import os
+from collections import defaultdict
 from datetime import datetime, timedelta, timezone
 
 import httpx
@@ -17,17 +18,33 @@ ADMIN_CHAT_ID  = int(os.environ["ADMIN_CHAT_ID"])
 SUPABASE_URL   = os.environ.get("SUPABASE_URL", "")
 SUPABASE_KEY   = os.environ.get("SUPABASE_KEY", "")
 WEBHOOK_SECRET = os.environ.get("WEBHOOK_SECRET", "")
-LANDING_ORIGIN = os.environ.get("LANDING_ORIGIN", "*")
+LANDING_ORIGIN = os.environ.get("LANDING_ORIGIN", "https://visalet.ru")
 
 TG_API = f"https://api.telegram.org/bot{BOT_TOKEN}"
+
+ALLOWED_ORIGINS = {LANDING_ORIGIN, "https://www.visalet.ru"}
 
 app = FastAPI()
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=[LANDING_ORIGIN],
-    allow_methods=["POST"],
+    allow_origins=list(ALLOWED_ORIGINS),
+    allow_methods=["POST", "GET"],
     allow_headers=["Content-Type"],
 )
+
+# ── Rate limiting (in-memory, per IP, max 5/hour) ────────────
+_rate_log: dict[str, list[datetime]] = defaultdict(list)
+RATE_LIMIT = 5
+RATE_WINDOW = timedelta(hours=1)
+
+def is_rate_limited(ip: str) -> bool:
+    now = datetime.now(timezone.utc)
+    hits = [t for t in _rate_log[ip] if now - t < RATE_WINDOW]
+    _rate_log[ip] = hits
+    if len(hits) >= RATE_LIMIT:
+        return True
+    _rate_log[ip].append(now)
+    return False
 
 try:
     db = create_client(SUPABASE_URL, SUPABASE_KEY) if SUPABASE_URL and SUPABASE_KEY else None
@@ -169,20 +186,34 @@ async def webhook(request: Request):
 
 @app.post("/submit")
 async def submit(request: Request):
+    ip = request.headers.get("x-forwarded-for", request.client.host).split(",")[0].strip()
+
+    if is_rate_limited(ip):
+        raise HTTPException(429, "Too many requests")
+
     body    = await request.json()
+
+    # Honeypot: bots fill hidden fields, humans don't
+    if body.get("website", ""):
+        return {"ok": True}  # silent drop
+
     name    = str(body.get("name",    "")).strip()
     phone   = str(body.get("phone",   "")).strip()
     visa    = str(body.get("visa",    "")).strip()
     comment = str(body.get("comment", "")).strip()
+    consent = body.get("consent", False)
 
     if not name or not phone or not visa:
         raise HTTPException(400, "Missing required fields")
+
+    if not consent:
+        raise HTTPException(400, "Consent required")
 
     msk      = timezone(timedelta(hours=3))
     date_str = datetime.now(msk).strftime("%d.%m.%Y %H:%M МСК")
 
     text = (
-        "📬 <b>Новая заявка — Visa Travel Kazan</b>\n\n"
+        "📬 <b>Новая заявка — ВизаЛёт</b>\n\n"
         f"👤 <b>Имя:</b> {name}\n"
         f"📱 <b>Телефон:</b> {phone}\n"
         f"🌍 <b>Виза / страна:</b> {visa}\n"

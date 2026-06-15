@@ -525,11 +525,17 @@
             <label style="display:block;font-size:13px;font-weight:600;color:#3c4654;margin-bottom:7px;">Комментарий</label>
             <textarea id="f-comment" rows="3" placeholder="Кратко опишите вашу ситуацию" style="width:100%;padding:13px 15px;border:1px solid rgba(15,27,45,0.16);border-radius:9px;font-size:15px;font-family:'Inter',sans-serif;background:#fff;color:#0f1b2d;resize:vertical;transition:border-color .2s;"></textarea>
           </div>
+          <!-- Honeypot: hidden from humans, bots fill it -->
+          <input type="text" id="f-website" name="website" autocomplete="off" tabindex="-1" style="position:absolute;left:-9999px;opacity:0;height:0;width:0;" aria-hidden="true">
+          <!-- 152-ФЗ: согласие на обработку персональных данных -->
+          <label style="display:flex;align-items:flex-start;gap:10px;cursor:pointer;">
+            <input type="checkbox" id="f-consent" required style="margin-top:3px;flex-shrink:0;width:16px;height:16px;accent-color:#c9a84c;cursor:pointer;">
+            <span style="font-size:12.5px;color:#56616f;line-height:1.55;">Я даю согласие на <a href="/privacy.html" target="_blank" rel="noopener" style="color:#b08f3c;text-decoration:underline;text-underline-offset:2px;">обработку персональных данных</a> в соответствии с Федеральным законом № 152-ФЗ</span>
+          </label>
           <button type="submit" id="f-submit" class="vtk-btn-submit" style="margin-top:4px;background:#c9a84c;color:#0f1b2d;border:none;font-size:15.5px;font-weight:600;padding:15px;border-radius:10px;cursor:pointer;font-family:'Inter',sans-serif;display:flex;align-items:center;justify-content:center;gap:10px;box-shadow:0 6px 18px rgba(201,168,76,0.3);">
             <span id="f-spinner" style="display:none;width:16px;height:16px;border:2px solid rgba(15,27,45,0.3);border-top-color:#0f1b2d;border-radius:50%;animation:vtk-spin .7s linear infinite;"></span>
             <span id="f-label">Отправить заявку</span>
           </button>
-          <p style="color:#8a93a0;font-size:12px;line-height:1.5;margin:2px 0 0;text-align:center;">Нажимая кнопку, вы соглашаетесь на обработку персональных данных.</p>
         </form>
         <!-- FORM SUCCESS -->
         <div id="form-success" style="display:none;text-align:center;padding:36px 12px;">
@@ -741,10 +747,12 @@
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
-          name: document.getElementById('f-name').value.trim(),
-          phone: document.getElementById('f-phone').value.trim(),
-          visa: document.getElementById('f-visa').value,
-          comment: document.getElementById('f-comment').value.trim()
+          name:    document.getElementById('f-name').value.trim(),
+          phone:   document.getElementById('f-phone').value.trim(),
+          visa:    document.getElementById('f-visa').value,
+          comment: document.getElementById('f-comment').value.trim(),
+          website: document.getElementById('f-website').value,
+          consent: document.getElementById('f-consent').checked
         })
       });
       if (!res.ok) throw new Error('bad');
