@@ -126,6 +126,28 @@ async def webhook(request: Request):
                      parse_mode="HTML")
             return {"ok": True}
 
+        # Admin diagnostic: ping every manager and report who is reachable.
+        # A manager is unreachable until they open the bot and press Start —
+        # Telegram forbids a bot from messaging users who haven't started it.
+        if chat_id == ADMIN_CHAT_ID and text_in == "/check":
+            if not MANAGER_CHAT_IDS:
+                await tg("sendMessage", chat_id=ADMIN_CHAT_ID,
+                         text="⚠️ MANAGER_CHAT_IDS пуст. Добавьте числовые ID менеджеров в переменную окружения на Render.")
+                return {"ok": True}
+            ok_ids, bad_ids = [], []
+            for cid in MANAGER_CHAT_IDS:
+                try:
+                    await tg("sendMessage", chat_id=cid,
+                             text="✅ Проверка связи: вы подключены и будете получать заявки с сайта ВизаЛёт.")
+                    ok_ids.append(cid)
+                except Exception:
+                    bad_ids.append(cid)
+            await tg("sendMessage", chat_id=ADMIN_CHAT_ID,
+                     text=(f"Проверка менеджеров — всего {len(MANAGER_CHAT_IDS)}:\n"
+                           f"✅ Получили сообщение: {', '.join(map(str, ok_ids)) or '—'}\n"
+                           f"⛔ Недоступны (не нажали Start у бота): {', '.join(map(str, bad_ids)) or '—'}"))
+            return {"ok": True}
+
         if chat_id == ADMIN_CHAT_ID:
             # Admin always gets access; show who currently receives leads
             approved = len(get_approved_chat_ids())
@@ -133,7 +155,8 @@ async def webhook(request: Request):
                      text=(f"👋 Привет, Камиль!\n"
                            f"Менеджеров в MANAGER_CHAT_IDS: {len(MANAGER_CHAT_IDS)}\n"
                            f"Одобрено через бота: {approved}\n"
-                           f"Все они получают новые заявки. Менеджер может узнать свой ID командой /id."))
+                           f"Все они получают новые заявки.\n"
+                           f"Команды: /check — проверить, кто подключён · /id — узнать свой ID."))
             return {"ok": True}
 
         if is_approved(chat_id):
@@ -259,6 +282,10 @@ async def submit(request: Request):
         *[tg("sendMessage", chat_id=cid, text=text, parse_mode="HTML") for cid in chat_ids],
         return_exceptions=True,
     )
+
+    for cid, r in zip(chat_ids, results):
+        if isinstance(r, Exception):
+            print(f"submit: доставка получателю {cid} не удалась: {r}")
 
     errors = [r for r in results if isinstance(r, Exception)]
     if errors and len(errors) == len(chat_ids):
