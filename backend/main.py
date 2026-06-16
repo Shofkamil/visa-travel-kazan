@@ -20,6 +20,19 @@ SUPABASE_KEY   = os.environ.get("SUPABASE_KEY", "")
 WEBHOOK_SECRET = os.environ.get("WEBHOOK_SECRET", "")
 LANDING_ORIGIN = os.environ.get("LANDING_ORIGIN", "https://visalet.ru")
 
+# Permanent lead recipients: comma-separated Telegram chat IDs in the
+# MANAGER_CHAT_IDS env var (e.g. "111111111,222222222"). Persists across
+# restarts with NO database, and is merged with anyone approved via the bot.
+def _parse_ids(raw: str) -> list[int]:
+    ids = []
+    for part in raw.split(","):
+        part = part.strip()
+        if part.lstrip("-").isdigit():
+            ids.append(int(part))
+    return ids
+
+MANAGER_CHAT_IDS = _parse_ids(os.environ.get("MANAGER_CHAT_IDS", ""))
+
 TG_API = f"https://api.telegram.org/bot{BOT_TOKEN}"
 
 # Lock CORS to the real site. We deliberately ignore a "*" value in
@@ -103,14 +116,24 @@ async def webhook(request: Request):
         chat_id    = user.get("id")
         username   = user.get("username", "") or ""
         first_name = user.get("first_name", "") or ""
+        text_in    = (msg.get("text") or "").strip().lower()
+
+        # Anyone can ask the bot for their own chat ID (to send to the admin)
+        if text_in == "/id":
+            await tg("sendMessage", chat_id=chat_id,
+                     text=f"Ваш Telegram ID: <code>{chat_id}</code>\n"
+                          f"Передайте его администратору, чтобы получать заявки.",
+                     parse_mode="HTML")
+            return {"ok": True}
 
         if chat_id == ADMIN_CHAT_ID:
-            # Admin always gets access; show list of approved users
-            ids = get_approved_chat_ids()
-            count = len(ids)
+            # Admin always gets access; show who currently receives leads
+            approved = len(get_approved_chat_ids())
             await tg("sendMessage", chat_id=ADMIN_CHAT_ID,
-                     text=f"👋 Привет, Камиль! Одобрено пользователей: {count}.\n"
-                          f"Когда кто-то пишет /start, вы получите запрос на одобрение.")
+                     text=(f"👋 Привет, Камиль!\n"
+                           f"Менеджеров в MANAGER_CHAT_IDS: {len(MANAGER_CHAT_IDS)}\n"
+                           f"Одобрено через бота: {approved}\n"
+                           f"Все они получают новые заявки. Менеджер может узнать свой ID командой /id."))
             return {"ok": True}
 
         if is_approved(chat_id):
@@ -161,7 +184,7 @@ async def webhook(request: Request):
                     "chat_id":    target_id,
                     "username":   username,
                     "first_name": first_name,
-                }).execute()
+                }, on_conflict="chat_id").execute()
             else:
                 _memory_users.add(target_id)
 
@@ -227,9 +250,10 @@ async def submit(request: Request):
         + f"\n📅 {date_str}"
     )
 
-    chat_ids = get_approved_chat_ids()
-    if not chat_ids:
-        chat_ids = [ADMIN_CHAT_ID]   # fallback if no one approved yet
+    # Deliver to everyone: permanent managers (MANAGER_CHAT_IDS env, no DB needed)
+    # plus anyone approved via the bot. Fall back to the admin if the list is empty.
+    recipients = set(MANAGER_CHAT_IDS) | set(get_approved_chat_ids())
+    chat_ids = list(recipients) if recipients else [ADMIN_CHAT_ID]
 
     results = await asyncio.gather(
         *[tg("sendMessage", chat_id=cid, text=text, parse_mode="HTML") for cid in chat_ids],
