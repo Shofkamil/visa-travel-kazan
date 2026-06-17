@@ -310,16 +310,32 @@ async def serve_index():
 
 # ── Auto-register webhook on startup ─────────────────────────
 
+# ponytail: hardcoded fallback URL because RENDER_EXTERNAL_URL being unset
+# silently skipped webhook registration → bot received nothing.
+WEBHOOK_BASE = (os.environ.get("RENDER_EXTERNAL_URL") or "https://visatravel-api.onrender.com").rstrip("/")
+
+
+async def _register_webhook() -> dict:
+    kwargs: dict = {"url": f"{WEBHOOK_BASE}/webhook"}
+    if WEBHOOK_SECRET:
+        kwargs["secret_token"] = WEBHOOK_SECRET
+    return await tg("setWebhook", **kwargs)
+
+
 @app.on_event("startup")
 async def set_webhook():
     try:
-        base = os.environ.get("RENDER_EXTERNAL_URL", "").rstrip("/")
-        if not base:
-            return
-        kwargs: dict = {"url": f"{base}/webhook"}
-        if WEBHOOK_SECRET:
-            kwargs["secret_token"] = WEBHOOK_SECRET
-        result = await tg("setWebhook", **kwargs)
-        print(f"Webhook set: {result}")
+        print(f"Webhook set: {await _register_webhook()}")
     except Exception as e:
         print(f"Warning: setWebhook failed ({e}), continuing anyway")
+
+
+@app.get("/set-webhook")
+async def set_webhook_now():
+    """Open in a browser to re-register the webhook and see its live state."""
+    try:
+        set_res = await _register_webhook()
+        info = await tg("getWebhookInfo")
+        return {"set": set_res.get("description", set_res), "info": info.get("result", info)}
+    except Exception as e:
+        return {"error": str(e)}
