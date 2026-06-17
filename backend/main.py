@@ -1,6 +1,7 @@
 import asyncio
 import hmac
 import os
+import re
 from collections import defaultdict
 from datetime import datetime, timedelta, timezone
 
@@ -17,7 +18,10 @@ BOT_TOKEN      = os.environ["BOT_TOKEN"]
 ADMIN_CHAT_ID  = int(os.environ["ADMIN_CHAT_ID"])
 SUPABASE_URL   = os.environ.get("SUPABASE_URL", "")
 SUPABASE_KEY   = os.environ.get("SUPABASE_KEY", "")
-WEBHOOK_SECRET = os.environ.get("WEBHOOK_SECRET", "")
+# ponytail: Telegram only allows A-Za-z0-9_- in secret_token (max 256).
+# Render's generated WEBHOOK_SECRET had other chars → setWebhook 400'd →
+# webhook never registered → bot silent. Strip to the allowed charset.
+WEBHOOK_SECRET = re.sub(r"[^A-Za-z0-9_-]", "", os.environ.get("WEBHOOK_SECRET", ""))[:256]
 LANDING_ORIGIN = os.environ.get("LANDING_ORIGIN", "https://visalet.ru")
 
 # Permanent lead recipients: comma-separated Telegram chat IDs in the
@@ -338,4 +342,5 @@ async def set_webhook_now():
         info = await tg("getWebhookInfo")
         return {"set": set_res.get("description", set_res), "info": info.get("result", info)}
     except Exception as e:
-        return {"error": str(e)}
+        # never leak BOT_TOKEN (it appears in httpx error URLs)
+        return {"error": str(e).replace(BOT_TOKEN, "***")}
