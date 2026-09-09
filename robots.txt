@@ -1,4 +1,26 @@
 User-agent: *
 Allow: /
 
+# Yandex
+User-agent: YandexBot
+Allow: /
+
+# OpenAI
+User-agent: GPTBot
+Allow: /
+User-agent: OAI-SearchBot
+Allow: /
+
+# Google AI / Gemini
+User-agent: Google-Extended
+Allow: /
+
+# Perplexity
+User-agent: PerplexityBot
+Allow: /
+
+# Anthropic / Claude
+User-agent: ClaudeBot
+Allow: /
+
 Sitemap: https://visalet.ru/sitemap.xml
